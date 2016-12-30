@@ -5,7 +5,7 @@ Tags:
 - Open Source
 - Cake
 - Tutorials
-RedirectFrom: 2016/07/31/Cake-Creating-your-first-addin/
+RedirectFrom: 2016/07/31/Cake-Creating-your-first-addin/index.html
 ---
 
 

@@ -3,7 +3,7 @@ Title: Using Pods in Ember
 Published: 2015-01-07 19:00:00
 Tags:
 - Ember
-RedirectFrom: blog/html/2015/01/07/using_pods_in_ember.html
+RedirectFrom: blog/html/2015/01/07/using_pods_in_ember
 ---
 
 When I first started using Ember-CLI I did not pods. Recently I started creating all new code usings pods. It was really weird at first to use them as the conventions seemed strange and confusing.

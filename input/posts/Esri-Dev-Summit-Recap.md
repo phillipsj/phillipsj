@@ -5,7 +5,7 @@ Tags:
 - Esri
 - Presentations
 - Python
-RedirectFrom: blog/html/2014/03/17/esri_dev_summit_recap.html
+RedirectFrom: blog/html/2014/03/17/esri_dev_summit_recap
 ---
 
 I made it back from the Esri Dev Summit. Dodge ball did not work out so well as we went out in the second round. However, the [keynote](http://video.esri.com/watch/3223/social-coding-and-the-future-of-open-source) by Chris Wanstrath was great and a keynote that was definately needed at an Esri conference.

@@ -5,7 +5,7 @@ Tags:
 - Agile
 - Craftsmanship
 - Shipping
-RedirectFrom: blog/html/2015/04/20/inspiration_software_faster.html
+RedirectFrom: blog/html/2015/04/20/inspiration_software_faster
 ---
 
 I typically listen to podcasts while I mow my yard. I find mowing relaxing and enjoy doing it myself. However, some of the recent episodes of the podcasts that I like did not catch my interest, so I went digging through some archives. I stumbled upon [DotNetRocks](http://www.dotnetrocks.com/) episode [1118](http://www.dotnetrocks.com/default.aspx?showNum=1118) with [Dan North](http://dannorth.net/). All I can say is wow, what an episode. I started out my career with the view point that I just needed to deliver software that made peoples life better. I didn’t care about the craftsmanship, as long as it worked and people found it useful, I was happy. Somewhere along the way I lost that, over my short eight year career I became to focused on writing “great” software, that I lost my primary focus, which was writing software that delivered business value. So here is the email that I sent my team today, you will notice lots of qoutes and paraphrasing

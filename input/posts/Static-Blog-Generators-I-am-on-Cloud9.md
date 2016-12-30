@@ -6,7 +6,7 @@ Tags:
 - Blog
 - Cloud9
 - Static
-RedirectFrom: blog/html/2015/04/12/static_blog_generators_i_am_on_cloud9.html
+RedirectFrom: blog/html/2015/04/12/static_blog_generators_i_am_on_cloud9
 ---
 
 I am a big fan of using a static blog generator. I don’t have to worry, about security, database, or hosting. This blog is powered by [Tinkerer](http://tinkerer.me/) which is an extension built on [Sphinx](http://sphinx-doc.org/), Sphinx is primarily used to create documentation for Python projects, but is really useful in general for lots of things.

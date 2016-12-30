@@ -5,7 +5,7 @@ Tags:
 - Open Source
 - Cake
 - Tutorials
-RedirectFrom: 2016/08/07/Cake-Unit-testing-addins/
+RedirectFrom: 2016/08/07/Cake-Unit-testing-addins/index.html
 ---
 
 I am back with another confession to make, my [Cake.XdtTransform]() project does not have any unit testing. So I decided this is a great opportunity to create a tutorial for unit testing a Cake addin.

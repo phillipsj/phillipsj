@@ -4,7 +4,7 @@ Published: 2015-12-04 19:00:00
 Tags:
 - Open Source
 - Cake
-RedirectFrom: blog/html/2015/12/04/cake_squirrel.html
+RedirectFrom: blog/html/2015/12/04/cake_squirrel
 ---
 
 Just published a new package called [Cake.Squirrel](https://www.nuget.org/packages/Cake.Squirrel/). It integrates [Squirrel.Windows](https://github.com/Squirrel/Squirrel.Windows) into the Cake pipeline so you can now create your Squirrel package using Cake.

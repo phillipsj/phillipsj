@@ -5,7 +5,7 @@ Tags:
 - PyTennessee
 - Python
 - Conference
-RedirectFrom: blog/html/2015/02/09/pytennessee_2015.html
+RedirectFrom: blog/html/2015/02/09/pytennessee_2015
 ---
 
 The second ever PyTennessee just wrapped up and I really enjoyed myself again. It is nice having a great conference to attend in Tennessee. The organizers topped themselves again this year. For the price this conferece is packed with great sessions and as a bonus the food was awesome, provided by [sifted](http://www.siftednashville.co/). I am just going to run through a couple of my favorites, but I really enjoyed all that I could attend.

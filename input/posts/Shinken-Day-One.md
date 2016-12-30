@@ -4,7 +4,7 @@ Published: 2014-09-08 20:00:00
 Tags:
 - Monitoring
 - Python
-RedirectFrom: blog/html/2014/09/08/shinken_day_one.html
+RedirectFrom: blog/html/2014/09/08/shinken_day_one
 ---
 
 I have been investigating monitoring tools to determine which one would best fit our skillsets and environment. While I was at the City of Austin, we used Nagios and I found it an awesome tool because of the alerting and alert escalation that was built in. [Shinken](http://www.shinken-monitoring.org/) is a montioring framework written in Python with it’s heritage being Nagios.  Since it is a Python based framework I thought what would be better to use.

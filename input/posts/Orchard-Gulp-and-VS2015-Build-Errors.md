@@ -6,7 +6,7 @@ Tags:
 - Gulp
 - VS2015
 - Open Source
-RedirectFrom: blog/html/2015/09/29/orchard_gulp_and_vs2015_build_errors.html
+RedirectFrom: blog/html/2015/09/29/orchard_gulp_and_vs2015_build_errors
 ---
 
 Recently, my team and I, have started using Visual Studio 2015 while working on our Orchard project. Orchard has started using Gulp to manage building some of the javascript used in the Layouts and Dynamic Forms modules. Since VS 2015 detects and automatically watches Gulp files, if you have a parameter set at the top of the Gulp file, node modules start automatically downloading and all JS

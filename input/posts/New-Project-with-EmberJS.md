@@ -4,7 +4,7 @@ Published: 2014-11-03 19:00:00
 Tags:
 - EmberJS
 - Ember-CLI
-RedirectFrom: blog/html/2014/11/03/new_project_with_emberjs.html
+RedirectFrom: blog/html/2014/11/03/new_project_with_emberjs
 ---
 
 We are starting to embark on changing a few applications at work to be more modern and to start using an API that we are developing.

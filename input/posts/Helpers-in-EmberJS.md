@@ -6,7 +6,7 @@ Tags:
 - Helpers
 - Handlebars
 - Ember-CLI
-RedirectFrom: blog/html/2014/11/04/helpers_in_emberjs.html
+RedirectFrom: blog/html/2014/11/04/helpers_in_emberjs
 ---
 
 EmberJS uses Handlebars as its template engine. To extend it, you create what Ember calls helpers. There are several ways in Ember to tackle a problem, but some are more optimal than others.

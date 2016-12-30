@@ -6,7 +6,7 @@ Tags:
 - Ember-CLI
 - Mapping
 - GIS
-RedirectFrom: blog/html/2014/11/19/ember_cli_and_google_maps.html
+RedirectFrom: blog/html/2014/11/19/ember_cli_and_google_maps
 ---
 
 This evening I started working on a project that I realize Ember is the perfect

@@ -3,7 +3,7 @@ Title: Why I picked Ember
 Published: 2014-11-28 19:00:00
 Tags:
 - Ember
-RedirectFrom: blog/html/2014/11/28/why_i_picked_ember.html
+RedirectFrom: blog/html/2014/11/28/why_i_picked_ember
 ---
 
 This is going to be long post, probably a ramble, about why I settled on Ember as the new age MV\* framework I wanted to learn.

@@ -3,7 +3,7 @@ Title: Why I am not leaving .NET
 Published: 2015-01-17 19:00:00
 Tags:
 - .NET
-RedirectFrom: blog/html/2015/01/17/why_i_am_not_leaving_net.html
+RedirectFrom: blog/html/2015/01/17/why_i_am_not_leaving_net
 ---
 
 This is going to be a long read, but something has just gotten me going today about making this post. I have actively been doing development for nine years. I started my development experience

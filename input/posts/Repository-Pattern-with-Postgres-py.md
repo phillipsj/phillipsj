@@ -4,7 +4,7 @@ Published: 2014-03-05 19:00:00
 Tags:
 - Python
 - Postgres
-RedirectFrom: blog/html/2014/03/05/repository_pattern_with_postgres_py.html
+RedirectFrom: blog/html/2014/03/05/repository_pattern_with_postgres_py
 ---
 
 

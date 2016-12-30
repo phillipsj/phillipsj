@@ -5,7 +5,7 @@ Tags:
 - EmberJS
 - Ember-CLI
 - Books
-RedirectFrom: blog/html/2014/11/22/review_ember_cli_101.html
+RedirectFrom: blog/html/2014/11/22/review_ember_cli_101
 ---
 
 I have posted a couple of times about my frustration using Ember. I was about two weeks in using EmberJS when I finally got to a point that I just did not know how to proceed. I was having difficulty connecting all the dots and embracing the “Ember Way”, which I feel is critical to really getting the most out of Ember.

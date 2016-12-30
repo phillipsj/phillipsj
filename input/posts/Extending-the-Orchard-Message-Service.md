@@ -4,7 +4,7 @@ Published: 2016-08-25 19:22:55
 Tags:
 - Open Source
 - Orchard
-RedirectFrom: 2016/08/25/Extending-the-Orchard-Message-Service/
+RedirectFrom: 2016/08/25/Extending-the-Orchard-Message-Service/index.html
 ---
 
 This journey begin in a somewhat normal way. I needed to allow a user in our Orchard instance to submit a form that would send an email to our ticketing system. I know, no API exists for the ticketing system and I had to use an old school way. After getting the initial implementation, we discovered that the email that was being sent was HTML and that HTML was supported, but a bug fix required emails to be in plain text.  Not only that, but the information that gets parsed has to be the first content in the email. I was hit by a double whammy, my email was HTML and the template that was getting applied to the email was our theme template. So couple different items came out of this.

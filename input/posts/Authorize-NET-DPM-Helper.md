@@ -4,7 +4,7 @@ Published: 2015-02-26 19:00:00
 Tags:
 - ASP .NET MVC
 - Authorize .NET
-RedirectFrom: blog/html/2015/02/26/authorize_net_dpm_helper.html
+RedirectFrom: blog/html/2015/02/26/authorize_net_dpm_helper
 ---
 
 I recently started diving into learning about payment gateways and payment processing. This is a new area for me and there a lot to learn. After Authorize .NET was settled on as our payment gateway, I went about the task of learning their .NET SDK. There are way to many options and I do not understand the pros and cons of each method, but after reading their documentation I settled on using their Direct Post Method (DPM) as it limited our exposure to sensitive information and the featureset is perfect for what we are currently doing.

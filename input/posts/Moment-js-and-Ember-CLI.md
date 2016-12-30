@@ -6,7 +6,7 @@ Tags:
 - Helpers
 - Moment.js
 - Ember-CLI
-RedirectFrom: blog/html/2014/11/19/moment_js_and_ember_cli.html
+RedirectFrom: blog/html/2014/11/19/moment_js_and_ember_cli
 ---
 
 Moment.js is not inlcuded by default with Ember-CLI, so if you want to create a helper to generate beautifully formatted dates, then you need to make sure to install the ember-cli-addon for it.

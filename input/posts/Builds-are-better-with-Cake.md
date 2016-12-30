@@ -5,7 +5,7 @@ Tags:
 - Orchard
 - Open Source
 - Cake
-RedirectFrom: blog/html/2015/10/18/builds_are_better_with_cake.html
+RedirectFrom: blog/html/2015/10/18/builds_are_better_with_cake
 ---
 
 As most of you know, my team has been using Orchard to build our next application. While we have found the majority of what Orchard has to offer great, there has been trouble with the build for Orchard. We decided it was time to create a different way to build Orchard that was easier for junior devs to understand and easier for us to consume.

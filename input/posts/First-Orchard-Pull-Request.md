@@ -4,7 +4,7 @@ Published: 2015-09-09 20:00:00
 Tags:
 - Open Source
 - Orchard
-RedirectFrom: blog/html/2015/09/09/first_orchard_pull_request.html
+RedirectFrom: blog/html/2015/09/09/first_orchard_pull_request
 ---
 
 Lately my team and I have been working with [Orchard](http://www.orchardproject.net/) CMS. We picked Orchard because we are .NET developers and Orchard provided such a great framework to start building our new system with that it put us months ahead. In addition we did need the capabilities provided by the CMS modules, but in reality Orchard could just have the CMS modules deactivated and still provide a great base.

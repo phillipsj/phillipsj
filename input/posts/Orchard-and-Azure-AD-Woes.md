@@ -6,7 +6,7 @@ Tags:
 - Azure
 - Owin
 - Open Source
-RedirectFrom: blog/html/2015/10/08/orchard_and_azure_ad_woes.html
+RedirectFrom: blog/html/2015/10/08/orchard_and_azure_ad_woes
 ---
 
 So my team and I have been using Orchard CMS to build the next version of our product. Since we have been using Azure AD for authentication for our applicaions it only made sense to wire Orchard and Azure AD together. The typical way that it is suggested to be done is to Microsoft.Owin.Security.OpenIdConnect middleware.

@@ -4,7 +4,7 @@ Published: 2014-09-22 20:00:00
 Tags:
 - Book Club
 - Confident Code
-RedirectFrom: blog/html/2014/09/22/book_club_confident_ruby.html
+RedirectFrom: blog/html/2014/09/22/book_club_confident_ruby
 ---
 
 I recently started ready the book “Confident Ruby” by Avdi Grimm. I have been a long time listener to the Ruby Rogues and I have been interested in this book for sometime. Since I started a new job and we didn’t have a book club, I thought this would be a good oppurtunity to be held accountable to read it.

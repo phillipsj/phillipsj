@@ -4,7 +4,7 @@ Published: 2014-11-05 19:00:00
 Tags:
 - EmberJS
 - Ember
-RedirectFrom: blog/html/2014/11/05/ember_frustration.html
+RedirectFrom: blog/html/2014/11/05/ember_frustration
 ---
 
 Since yesterday’s post I have spent two full days of frustation while working on the Ember app that I am building. I am finding it very difficult to do what I would consider straight forward

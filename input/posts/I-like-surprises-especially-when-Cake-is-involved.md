@@ -4,7 +4,7 @@ Published: 2015-11-30 19:00:00
 Tags:
 - Open Source
 - Cake
-RedirectFrom: blog/html/2015/11/30/i_like_surprises_especially_when_cake_is_involved.html
+RedirectFrom: blog/html/2015/11/30/i_like_surprises_especially_when_cake_is_involved
 ---
 
 So I was working today to consume a Cake addin that isn’t fully baked. It is an addin that we needed. So I cloned the repo and pushed a copy of the package to a [MyGet.org](https://www.myget.org) to consume as part of our build. I added a custom NuGet.config file to my Cake tools directory, but Cake would not install the addin. So I just added it to the packages.config, still no dice.  I had to use the older syntax:

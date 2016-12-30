@@ -5,7 +5,7 @@ Tags:
 - Electron
 - OSS
 - Node
-RedirectFrom: blog/html/2016/05/13/fun_with_electron.html
+RedirectFrom: blog/html/2016/05/13/fun_with_electron
 ---
 
 So I have had the privilege to get to learn a little about [Electron](http://electron.atom.io/). My team inherited an app that was built using [AppJS](http://appjs.com/). Since that project is deprecated,we needed to move it to a new platform. I started looking around and decided to give Electron a try since I have been using [Atom](https://atom.io/) and [VSCode](https://code.visualstudio.com/). Another great thing about Electron is that we can get to keep our deployment consistent since it also uses [Squirrel.Windows](https://github.com/Squirrel/Squirrel.Windows) like we have started using for our other desktop apps. An added bonus is we can use [React](http://facebook.github.io/react/) also.

@@ -3,7 +3,7 @@ Title: 'Wow, lots of agile stuff'
 Published: 2015-05-13 20:00:00
 Tags:
 - Agile
-RedirectFrom: blog/html/2015/05/13/wow_lots_of_agile_stuff.html
+RedirectFrom: blog/html/2015/05/13/wow_lots_of_agile_stuff
 ---
 
 A couple of weeks after my last post about Software Faster, there seems to be lots of these posts popping up in my reader about agile. We may have reached this critical point in the agile movement were we are starting to realize that in the name of being agile we are being rigid. Here are the recent posts that jumped out at me.

@@ -6,7 +6,7 @@ Tags:
 - Helpers
 - Handlebars
 - Ember-CLI
-RedirectFrom: blog/html/2014/11/17/ember_helpers_testing.html
+RedirectFrom: blog/html/2014/11/17/ember_helpers_testing
 ---
 
 Following up with my last post, I forgot to address one of the key development practices that I am finding that Ember makes extremely easy, testing.  So I am going to show you how to test the helpers that were created in the previous post.

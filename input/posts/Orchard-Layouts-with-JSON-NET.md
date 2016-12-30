@@ -4,7 +4,7 @@ Published: 2015-09-11 20:00:00
 Tags:
 - Orchard
 - Open Source
-RedirectFrom: blog/html/2015/09/11/orchard_layouts_with_json_net.html
+RedirectFrom: blog/html/2015/09/11/orchard_layouts_with_json_net
 ---
 
 I have been developing a custom module that uses the Dynamic Forms module to programitically create a form. When creating a form you need to also create a layout. Below is an example from the PageCommands.cs in the Orchard Pages module for creating a layout.

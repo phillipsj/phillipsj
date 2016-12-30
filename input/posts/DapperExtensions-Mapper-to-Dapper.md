@@ -5,7 +5,7 @@ Tags:
 - .NET
 - Dapper
 - ORM
-RedirectFrom: blog/html/2015/02/19/dapperextensions_mapper_to_dapper.html
+RedirectFrom: blog/html/2015/02/19/dapperextensions_mapper_to_dapper
 ---
 
 I have used several of the differnet Object Relation Mappers (ORMs) out there and I find myself going back to [Dapper](https://github.com/StackExchange/dapper-dot-net). Dapper provides all the functionality that I find that I need and gives the the full power of the best DSL for working with a database, SQL. It is fast and lightweight. However, I do not know many peeps that want to waste there time writing the typical CRUD operations. Projects like [DapperExtensions](https://github.com/tmsmith/Dapper-Extensions), Dapper.Contrib, Dapper.Rainbow, and others, give users plenty of choices.

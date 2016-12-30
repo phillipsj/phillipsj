@@ -4,7 +4,7 @@ Published: 2014-05-29 20:00:00
 Tags:
 - Copyright
 - Licensing
-RedirectFrom: blog/html/2014/05/29/copyright_and_licensing.html
+RedirectFrom: blog/html/2014/05/29/copyright_and_licensing
 ---
 
 \*Disclaimer:  I am not a lawyer.

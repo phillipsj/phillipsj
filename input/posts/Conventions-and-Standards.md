@@ -2,7 +2,7 @@
 Title: Conventions and Standards
 Published: 2014-05-14 20:00:00
 Tags:
-RedirectFrom: blog/html/2014/05/14/conventions_and_standards.html
+RedirectFrom: blog/html/2014/05/14/conventions_and_standards
 ---
 
 **TL;DR; You should have a good reason not to follow conventions or standards.**

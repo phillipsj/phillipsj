@@ -4,7 +4,7 @@ Published: 10/1/2015
 Tags:
 - Orchard
 - Dynamic Forms
-RedirectFrom: blog/html/2015/10/01/contrib_to_dynamic_forms_module.html
+RedirectFrom: blog/html/2015/10/01/contrib_to_dynamic_forms_module
 ---
 
 Orchard CMS has this really cool module called Dynamic Forms.  It allows users to create forms that can create submissions, bind to content types, or tie into workflows. It is really powerful, but still a little rough around the edges. The new 1.9.2 release is going to provide lots of polish to this feature.

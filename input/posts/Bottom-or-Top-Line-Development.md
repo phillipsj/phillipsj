@@ -4,7 +4,7 @@ Published: 2015-07-28 20:00:00
 Tags:
 - Agile
 - Shipping
-RedirectFrom: blog/html/2015/07/28/bottom_or_top_line_development.html
+RedirectFrom: blog/html/2015/07/28/bottom_or_top_line_development
 ---
 
 On my journey into management, I have picked up a copy of [Behind Closed Doors](https://pragprog.com/book/rdbcd/behind-closed-doors) from the [Pragmatic Bookshelf](https://pragprog.com). I love their books and so far this one is shaping up to be a good one. Now to the point of this post, there is an aside in the book that discusses being a group that works directly on a product that
