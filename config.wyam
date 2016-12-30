@@ -1,0 +1,11 @@
+Settings.Host = "phillipsj.net";
+Settings.LinksUseHttps = false;
+GlobalMetadata["Title"] = "Jamie Phillips";
+GlobalMetadata["Description"] = "The personal blog of Jamie Phillips";
+GlobalMetadata["Intro"] = "A blog about software development and other random musings."; 
+
+Pipelines.Add("AtomFeed",
+    Documents(BlogPipelines.Posts),
+    GenerateFeeds().WithAtomPath(_ => "atom.xml"),
+    WriteFiles()
+);
