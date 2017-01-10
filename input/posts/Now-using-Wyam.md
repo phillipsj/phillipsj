@@ -4,6 +4,7 @@ Published: 1/2/2017
 Tags:
 - Open Source
 - Cake
+- Wyam
 ---
 
 **TL;DR; Wyam is awesome and worth checking it.**
