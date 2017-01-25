@@ -44,7 +44,7 @@ Task("Debug")
             "-a \"../Wyam/src/**/bin/Debug/*.dll\" -r \"blog -i\" -t \"../Wyam/themes/Blog/CleanBlog\" -p --attach");
     });
 
-Task("Deploy")
+Task("Deploy")    
     .IsDependentOn("Build")
     .Does(() => {
         var token = EnvironmentVariable("NETLIFY_PHILLIPSJ");
@@ -58,15 +58,18 @@ Task("Deploy")
     });
 
 Task("Netlify-Deploy")
+    .IsDependentOn("Install-Netlify-Cli")
     .IsDependentOn("Build")
     .Does(() => {
         var token = EnvironmentVariable("NETLIFY_PHILLIPSJ");
+        var siteId = EnvironmentVariable("NETLIFY_SITEID");
         if(string.IsNullOrEmpty(token)) {
             throw new Exception("Could not get NETLIFY_PHILLIPSJ environment variable");
         }
-        
-        // Upload via curl and zip instead
-        Npm.RunScript($"netlify deploy output -s phillipsj.netlify.com -t {token}");
+        if(string.IsNullOrEmpty(siteId)) {
+            throw new Exception("Could not get NETLIFY_SITEID environment variable");
+        }
+        Npm.RunScript("deploy", settings => settings.WithArgument(string.Format("-s {0}", siteId)).WithArgument(string.Format("-t {0}", token)));
     });
     
 //////////////////////////////////////////////////////////////////////

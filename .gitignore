@@ -4,3 +4,4 @@
 [Oo]utput/
 nuget.exe
 *.zip
+node_modules

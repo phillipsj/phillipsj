@@ -1,0 +1,23 @@
+{
+  "name": "phillipsj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "netlify-cli": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "netlify deploy output"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phillipsj/phillipsj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phillipsj/phillipsj/issues"
+  },
+  "homepage": "https://github.com/phillipsj/phillipsj#readme"
+}
