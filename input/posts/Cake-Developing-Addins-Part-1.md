@@ -5,12 +5,14 @@ Tags:
 - Open Source
 - Cake
 - Tutorials
+- Netlify
 ---
 
 # Cake: Developing Addins Part 1
 
 * [Part 2](http://www.phillipsj.net/posts/cake-developing-addins-part-2)
 * [Part 3](http://www.phillipsj.net/posts/cake-developing-addins-part-3)
+* [Part 4](http://www.phillipsj.net/posts/cake-developing-addins-part-4)
 
 I am kicking off a series of posts that will be a **Play By Play** of my choices and decisions around how and when to create a Cake Addin. This will serve as a reference for me and hopefully someone will find it useful.
 

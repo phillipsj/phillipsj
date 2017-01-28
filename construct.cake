@@ -1,6 +1,7 @@
 #tool nuget:?package=Wyam&prerelease
 #addin nuget:?package=Cake.Wyam&prerelease
 #addin nuget:?package=Cake.Npm
+#addin nuget:?package=Cake.Powershell
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -69,7 +70,10 @@ Task("Netlify-Deploy")
         if(string.IsNullOrEmpty(siteId)) {
             throw new Exception("Could not get NETLIFY_SITEID environment variable");
         }
-        Npm.RunScript("deploy", settings => settings.WithArgument(string.Format("-s {0}", siteId)).WithArgument(string.Format("-t {0}", token)));
+        
+        StartPowershellScript("./node_modules/.bin/netlify deploy", args => {
+            args.Append("p", "output").Append("s", siteId).Append("t", token);
+        });
     });
     
 //////////////////////////////////////////////////////////////////////
@@ -80,7 +84,7 @@ Task("Default")
     .IsDependentOn("Preview");    
     
 Task("AppVeyor")
-    .IsDependentOn("Deploy");
+    .IsDependentOn("Netlify-Deploy");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION

@@ -2,6 +2,10 @@
 Title: "Cake: Developing Addins Part 3"
 Published: 01/24/2017 20:51:30
 Tags: 
+- Open Source
+- Cake
+- Tutorials
+- Netlify
 ---
 # Cake: Developing Addins Part 3
 
