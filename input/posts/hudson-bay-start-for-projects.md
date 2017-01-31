@@ -1,6 +1,6 @@
 ---
 Title: "Hudson Bay Start for Projects"
-Published: 01/28/2017 12:11:32
+Published: 01/30/2017 23:11:32
 Tags: 
 - Open Source
 - Cake
@@ -19,7 +19,7 @@ With all of that said, I am going to walk you through what I do with any new pro
 
 ![](/images/other-tutorials/hudson-bay-start/new-project.png)
 
-### The strucutre of your project
+### The structure of your project
 
 ![](/images/other-tutorials/hudson-bay-start/project-structure.png)
 
@@ -31,7 +31,7 @@ The Cake extension for VSCode makes this an easy job.
 
 ![](/images/other-tutorials/hudson-bay-start/cake-bootstrapper.png)
 
-And here it is in the filesystem.
+And here it is in the file system.
 
 ![](/images/other-tutorials/hudson-bay-start/installed-bootstrapper.png)
 
