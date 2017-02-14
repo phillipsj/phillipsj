@@ -31,7 +31,9 @@ I am going to walk you all through how to configure the App Service and the cont
 
 ![](/images/other-tutorials/deploy-mkdocs/click-create-web-app.png)
 
-## Step 4:  A new blade will open, enter requested fields. I like to group my resources together by function, but feel free to add to an existing one if you want. I selected a free plan that I already had created. I am also going to turn on *Application Insights* to provide me some analytics. Finally, click *Create* and you should get a notification that it is being deployed.
+## Step 5:  Creating the site.
+
+A new blade will open, enter requested fields. I like to group my resources together by function, but feel free to add to an existing one if you want. I selected a free plan that I already had created. I am also going to turn on *Application Insights* to provide me some analytics. Finally, click *Create* and you should get a notification that it is being deployed.
 
 ![](/images/other-tutorials/deploy-mkdocs/click-create-web-app-2.png)
 
@@ -64,7 +66,7 @@ Now generate the *deploy.cmd* with the following command.
 azure site deploymentscript --python
 ```
 
-Below is the script with some modifications. I changed the deployment source to be the *site* folder which is default for mkdocs. I then added step 5 which runs the mkdocs build.
+Below is the script with some modifications. I changed the the script to build in the repository folder and moved the kudu sync closer to the end so I only get the static site copied. I then added step 4 which runs the mkdocs build.
 
 ```
 @if "%SCM_TRACE_LEVEL%" NEQ "4" @echo off
@@ -124,7 +126,7 @@ goto Deployment
 :SelectPythonVersion
 
 IF DEFINED KUDU_SELECT_PYTHON_VERSION_CMD (
-  call %KUDU_SELECT_PYTHON_VERSION_CMD% "%DEPLOYMENT_SOURCE%\site" "%DEPLOYMENT_TARGET%" "%DEPLOYMENT_TEMP%"
+  call %KUDU_SELECT_PYTHON_VERSION_CMD% "%DEPLOYMENT_SOURCE%" "%DEPLOYMENT_TARGET%" "%DEPLOYMENT_TEMP%"
   IF !ERRORLEVEL! NEQ 0 goto error
 
   SET /P PYTHON_RUNTIME=<"%DEPLOYMENT_TEMP%\__PYTHON_RUNTIME.tmp"
@@ -154,27 +156,21 @@ goto :EOF
 :Deployment
 echo Handling python deployment.
 
-:: 1. KuduSync
-IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
-  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
-  IF !ERRORLEVEL! NEQ 0 goto error
-)
-
-IF NOT EXIST "%DEPLOYMENT_TARGET%\requirements.txt" goto postPython
-IF EXIST "%DEPLOYMENT_TARGET%\.skipPythonDeployment" goto postPython
+IF NOT EXIST "%DEPLOYMENT_SOURCE%\requirements.txt" goto postPython
+IF EXIST "%DEPLOYMENT_SOURCE%\.skipPythonDeployment" goto postPython
 
 echo Detected requirements.txt.  You can skip Python specific steps with a .skipPythonDeployment file.
 
-:: 2. Select Python version
+:: 1. Select Python version
 call :SelectPythonVersion
 
-pushd "%DEPLOYMENT_TARGET%"
+pushd "%DEPLOYMENT_SOURCE%"
 
-:: 3. Create virtual environment
-IF NOT EXIST "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" (
-  IF EXIST "%DEPLOYMENT_TARGET%\env" (
+:: 2. Create virtual environment
+IF NOT EXIST "%DEPLOYMENT_SOURCE%\env\azure.env.%PYTHON_RUNTIME%.txt" (
+  IF EXIST "%DEPLOYMENT_SOURCE%\env" (
     echo Deleting incompatible virtual environment.
-    rmdir /q /s "%DEPLOYMENT_TARGET%\env"
+    rmdir /q /s "%DEPLOYMENT_SOURCE%\env"
     IF !ERRORLEVEL! NEQ 0 goto error
   )
 
@@ -182,12 +178,12 @@ IF NOT EXIST "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" (
   %PYTHON_EXE% -m %PYTHON_ENV_MODULE% env
   IF !ERRORLEVEL! NEQ 0 goto error
 
-  copy /y NUL "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" >NUL
+  copy /y NUL "%DEPLOYMENT_SOURCE%\env\azure.env.%PYTHON_RUNTIME%.txt" >NUL
 ) ELSE (
   echo Found compatible virtual environment.
 )
 
-:: 4. Install packages
+:: 3. Install packages
 echo Pip install requirements.
 env\scripts\pip install -r requirements.txt
 IF !ERRORLEVEL! NEQ 0 goto error
@@ -196,12 +192,16 @@ REM Add additional package installation here
 REM -- Example --
 REM env\scripts\easy_install pytz
 REM IF !ERRORLEVEL! NEQ 0 goto error
-:: You can do the theme here or in your requirements.txt
-env\scripts\pip install mkdocs-bootswatch
 
-:: 5. Build mkdocs
+:: 4. Build mkdocs
 echo Building mkdocs
 env\scripts\mkdocs build
+
+:: 5. KuduSync
+IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
+  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%\site" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
+  IF !ERRORLEVEL! NEQ 0 goto error
+)
 
 :: 6. Copy web.config
 IF EXIST "%DEPLOYMENT_SOURCE%\web.%PYTHON_VER%.config" (
@@ -242,3 +242,24 @@ echo Finished successfully.
 
 ```
 
+Another nice addition since I am using a bootstrap them is to setup a custom web.config file for the static assets.  Create a file in your root called web.2.7.config and add the following contents. **Note that the 2.7 in the name refers to the version of python you are using.**
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <staticContent>
+    <remove fileExtension=".woff" />
+    <remove fileExtension=".json" />
+    <remove fileExtension=".mustache" />
+    <mimeMap fileExtension=".woff" mimeType="application/font-woff" />
+     <mimeMap fileExtension=".json" mimeType="application/json" />
+      <mimeMap fileExtension=".mustache" mimeType="text/html" />
+  </staticContent>
+  </system.webServer>
+</configuration>
+```
+
+With all of these items in place you should be able to use the deployment feature in Azure App Services to build and deploy your MkDocs created website.
+
+Thanks for reading.
