@@ -9,6 +9,11 @@ Tags:
 ---
 # Cake: Developing Addins Part 3
 
+* [Part 1](http://www.phillipsj.net/posts/cake-developing-addins-part-1)
+* [Part 2](http://www.phillipsj.net/posts/cake-developing-addins-part-2)
+* [Part 4](http://www.phillipsj.net/posts/cake-developing-addins-part-4)
+* [Part 5](http://www.phillipsj.net/posts/cake-developing-addins-part-5)
+
 Back with another installment of my thought process. I have been thinking a little more about it before I get started on the actual addin, that I realized that I could put together a quick and dirty solution. I am going to use the [Cake.Npm](https://github.com/cake-contrib/Cake.Npm) addin to do it.  So here goes.
 
 The first step would be to include the Cake.Npm in the Cake file for this blog.

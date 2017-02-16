@@ -12,6 +12,7 @@ Tags:
 * [Part 1](http://www.phillipsj.net/posts/cake-developing-addins-part-1)
 * [Part 2](http://www.phillipsj.net/posts/cake-developing-addins-part-2)
 * [Part 3](http://www.phillipsj.net/posts/cake-developing-addins-part-3)
+* [Part 5](http://www.phillipsj.net/posts/cake-developing-addins-part-5)
 
 So I wasn't ready to give up on making existing Cake tooling work. I have been working on a project at work and I discovered [Cake.Powershell](https://github.com/SharpeRAD/Cake.Powershell) and I figured I would give it a try. 
 
