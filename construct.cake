@@ -1,5 +1,6 @@
 #tool nuget:?package=Wyam&prerelease
 #addin nuget:?package=Cake.Wyam&prerelease
+#addin nuget:https://www.myget.org/F/beta-cake-addins/api/v2?package=Cake.Netlfiy&prerelease
 #addin nuget:?package=Cake.Npm
 #addin nuget:?package=Cake.Powershell
 
@@ -74,6 +75,22 @@ Task("Netlify-Deploy")
         StartPowershellScript("./node_modules/.bin/netlify deploy", args => {
             args.Append("p", "output").Append("s", siteId).Append("t", token);
         });
+    });
+
+    Task("Netlify-Addin-Deploy")
+    .IsDependentOn("Install-Netlify-Cli")
+    .IsDependentOn("Build")
+    .Does(() => {
+        var token = EnvironmentVariable("NETLIFY_PHILLIPSJ");
+        var siteId = EnvironmentVariable("NETLIFY_SITEID");
+        if(string.IsNullOrEmpty(token)) {
+            throw new Exception("Could not get NETLIFY_PHILLIPSJ environment variable");
+        }
+        if(string.IsNullOrEmpty(siteId)) {
+            throw new Exception("Could not get NETLIFY_SITEID environment variable");
+        }
+        
+        NetlifyDeploy("output", siteId, token);        
     });
     
 //////////////////////////////////////////////////////////////////////
