@@ -16,7 +16,7 @@ var target = Argument("target", "Default");
 
 Task("Install-Netlify-Cli")
     .Does(()=> {
-        Npm.Install(settings=>settings.Package("netlify-cli"));
+        Npm.WithLogLevel(NpmLogLevel.Silent).Install(settings=>settings.Package("netlify-cli"));
     });
 
 
@@ -77,7 +77,7 @@ Task("Netlify-Deploy")
         });
     });
 
-    Task("Netlify-Addin-Deploy")
+Task("Netlify-Addin-Deploy")
     .IsDependentOn("Install-Netlify-Cli")
     .IsDependentOn("Build")
     .Does(() => {
