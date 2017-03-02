@@ -5,7 +5,7 @@ Tags:
 ---
 # Cake: More SFTP
 
-I am back with more about SFTP usage from a Cake file. I have probably made this more difficult that needed, but I finally got a solution that I am happy with using. This solution involves using [WinSCP]() and the project's .NET wrapper.
+I am back with more about SFTP usage from a Cake file. I have probably made this more difficult that needed, but I finally got a solution that I am happy with using. This solution involves using [WinSCP](https://winscp.net/eng/index.php) and the project's .NET wrapper.
 
 ## 1. Add the NuGet package and import the dll.
 
