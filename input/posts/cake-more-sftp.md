@@ -7,7 +7,7 @@ Tags:
 
 I am back with more about SFTP usage from a Cake file. I have probably made this more difficult that needed, but I finally got a solution that I am happy with using. This solution involves using [WinSCP]() and the project's .NET wrapper.
 
-1.  Add the NuGet package and import the dll.
+## 1. Add the NuGet package and import the dll.
 
 It's worth mentioning here that this is the only method in which this will work. The dll is not included in the correct NuGet folder since it isn't placed into the *net45* folder. This is also true for the SharpSSH package too.
 
@@ -17,7 +17,7 @@ It's worth mentioning here that this is the only method in which this will work.
 using WinSCP;
 ```
 
-2.  The Cake Task
+## 2. The Cake Task
 
 Much of this code has been taken straight from the example.  The one thing that I had to do was reference the WinSCP.exe directly by telling the session the location of the executable. This may not be necessary for everyone.
 

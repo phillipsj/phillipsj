@@ -1,8 +1,8 @@
-Settings.Host = "phillipsj.net";
-Settings.LinksUseHttps = false;
-GlobalMetadata["Title"] = "Jamie Phillips";
-GlobalMetadata["Description"] = "The personal blog of Jamie Phillips";
-GlobalMetadata["Intro"] = "A blog about software development and other random musings."; 
+Settings[Keys.Host] = "phillipsj.net";
+Settings[Keys.LinksUseHttps] = false;
+Settings[BlogKeys.Title] = "Jamie Phillips";
+Settings[BlogKeys.Description] = "The personal blog of Jamie Phillips";
+Settings[BlogKeys.Intro] = "A blog about software development and other random musings."; 
 GlobalMetadata["MarkdownExtensions"] = "advanced+bootstrap+emojis+smartypants";
 
 Pipelines.Add("AtomFeed",
