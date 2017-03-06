@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "editor.wrappingColumn": 0,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
     "vsicons.presets.angular": false
 }

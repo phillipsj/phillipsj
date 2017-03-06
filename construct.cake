@@ -3,7 +3,6 @@
 #addin nuget:https://www.myget.org/F/beta-cake-addins/api/v2?package=Cake.Netlfiy&prerelease
 #addin nuget:?package=Cake.Npm
 #addin nuget:?package=Cake.Powershell
-
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
@@ -77,7 +76,7 @@ Task("Netlify-Deploy")
         });
     });
 
-    Task("Netlify-Addin-Deploy")
+Task("Netlify-Addin-Deploy")
     .IsDependentOn("Install-Netlify-Cli")
     .IsDependentOn("Build")
     .Does(() => {
