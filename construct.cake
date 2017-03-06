@@ -3,7 +3,6 @@
 #addin nuget:https://www.myget.org/F/beta-cake-addins/api/v2?package=Cake.Netlfiy&prerelease
 #addin nuget:?package=Cake.Npm
 #addin nuget:?package=Cake.Powershell
-
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
@@ -16,7 +15,7 @@ var target = Argument("target", "Default");
 
 Task("Install-Netlify-Cli")
     .Does(()=> {
-        Npm.WithLogLevel(NpmLogLevel.Silent).Install(settings=>settings.Package("netlify-cli"));
+        Npm.Install(settings=>settings.Package("netlify-cli"));
     });
 
 
