@@ -1,6 +1,6 @@
 #tool nuget:?package=Wyam&prerelease
 #addin nuget:?package=Cake.Wyam&prerelease
-#addin nuget:https://www.myget.org/F/beta-cake-addins/api/v2?package=Cake.Netlfiy&prerelease
+#addin nuget:https://www.myget.org/F/beta-cake-addins/api/v2?package=Cake.Netlify&prerelease
 #addin nuget:?package=Cake.Npm
 #addin nuget:?package=Cake.Powershell
 //////////////////////////////////////////////////////////////////////
