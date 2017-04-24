@@ -1,6 +1,6 @@
 #tool nuget:?package=Wyam&prerelease
 #addin nuget:?package=Cake.Wyam&prerelease
-#addin nuget:https://www.myget.org/F/beta-cake-addins/api/v2?package=Cake.Netlfiy&prerelease
+#addin nuget:?package=Cake.Netlify
 #addin nuget:?package=Cake.Npm
 #addin nuget:?package=Cake.Powershell
 //////////////////////////////////////////////////////////////////////
@@ -100,7 +100,7 @@ Task("Default")
     .IsDependentOn("Preview");    
     
 Task("AppVeyor")
-    .IsDependentOn("Netlify-Deploy");
+    .IsDependentOn("Netlify-Addin-Deploy");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION

@@ -3,10 +3,10 @@ Settings[Keys.LinksUseHttps] = false;
 Settings[BlogKeys.Title] = "Jamie Phillips";
 Settings[BlogKeys.Description] = "The personal blog of Jamie Phillips";
 Settings[BlogKeys.Intro] = "A blog about software development and other random musings."; 
-GlobalMetadata["MarkdownExtensions"] = "advanced+bootstrap+emojis+smartypants";
+Settings["MarkdownExtensions"] = "advanced+bootstrap+emojis+smartypants";
 
 Pipelines.Add("AtomFeed",
-    Documents(BlogPipelines.Posts),
+    Documents(Blog.Posts),
     GenerateFeeds().WithAtomPath(_ => "atom.xml"),
     WriteFiles()
 );
