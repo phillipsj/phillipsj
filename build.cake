@@ -15,7 +15,11 @@ var target = Argument("target", "Default");
 
 Task("Install-Netlify-Cli")
     .Does(()=> {
-        Npm.Install(settings=>settings.Package("netlify-cli"));
+        var settings = new NpmInstallSettings();
+        settings.Global = false;
+        settings.LogLevel = NpmLogLevel.Warn;
+        settings.AddPackage("netlify-cli");
+        NpmInstall(settings);
     });
 
 
