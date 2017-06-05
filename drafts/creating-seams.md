@@ -27,27 +27,21 @@ A seam in software is....
 
 ## Software Seams
 
-There are many different techniques and tools that help to create these seams. Design patterns like the [Gang of Four](http://amzn.to/2qvPC58) or [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) principles to name a couple. Below I will go into more details
+There are many different techniques and tools that help to create these seams. Design patterns like the [Gang of Four](http://amzn.to/2qvPC58) or [SOLID](https://goo.gl/8cfmsN) principles to name a couple. Below I will go into more details
 
 ### Design Patterns
+
+There are many design patterns that allow you to introduce *seams* into your software. The *Builder* pattern allows you to construct different representations of objects. The *Facade* pattern allows you to abstract out a subsystem, which creates a seam for you to introduce a different subsystem that supports the *Facade's* contract. There is the *Decorator* pattern that allows you to extend a class without disrupting the expected contract. The last one I am going to mention is the *Adaptor* pattern, which allows you to convert one interface into another that your recieving objects expect. I will leave the rest of the patterns upt to you to see how they provide seams.
 
 ### SOLID Principles
 
 How you create seams in software is straight forward and something you are already doing.  If you are using interfaces and making your implementations depend on those interfaces then you have created a seam. You can inpmlement that interface in a new class and substitute that new class with new behavior into any consumer using that interface. That seam allows you to make implementation changes without effecting any consumers of that interface. This is the principle of **Depedency Inversion** and **Interface Segragation**. 
 
-```
-// Put code sample here to demonstrate
-```
-
 Another way this can be performed is if you base your implementaiton on a higher level abstraction. So if you are a C# developer you know that a **MemoryStream** inherits from **Stream**. So in your method signature, accept a *Stream*, which will allow you to consume a *MemoryStream*, *FileStream*, *BufferedStream*, etc.
 
-```
-// Another code sample.
-```
-
-[SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design))
-
 ## Architecture Seams
+
+One could argue that design patterns and SOLID principles are all part of architecture and I wouldn't disagree.
 
 ## Integration Seams
 
