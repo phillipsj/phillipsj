@@ -1,47 +1,57 @@
 Title: Projects
 Image: images/lightbulb.jpg
 ---
+## Cake.Netlify 
+* [Source Code (cake-contrib/Cake.Ftp)](https://github.com/cake-contrib/Cake.Netlify)
+
+Cake Addin for working with [Netlify](https://www.netlify.com/).
+
+<p>
+    <a class="github-button" href="https://github.com/cake-contrib/Cake.Netlify" data-icon="octicon-star" data-style="mega" data-count-href="phillipsj/Cake.Ftp/stargazers" data-count-api="/reposcake-contrib/Cake.Netlify#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star cake-contrib/Cake.Netlify on GitHub">Star</a> <a class="github-button" href="https://github.com/cake-contrib/Cake.Netlify" data-icon="octicon-eye" data-style="mega" data-count-href="cake-contrib/Cake.Netlify/watchers" data-count-api="/repos/cake-contrib/Cake.Netlify#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch cake-contrib/Cake.Netlify on GitHub">Watch</a> <a href="https://twitter.com/phillipsj73" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@phillipsj73</a>
+</p>
+
+---
 
 ## Cake.Ftp 
-* [Source Code (phillipsj/Cake.Ftp)](https://github.com/phillipsj/Cake.Ftp)
+* [Source Code (cake-contrib/Cake.Ftp)](https://github.com/cake-contrib/Cake.Ftp)
 
 Cake Addin for working with FTP.
 
 <p>
-    <a class="github-button" href="https://github.com/phillipsj/Cake.Ftp" data-icon="octicon-star" data-style="mega" data-count-href="phillipsj/Cake.Ftp/stargazers" data-count-api="/repos/phillipsj/Cake.Ftp#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star phillipsj/Cake.Ftp on GitHub">Star</a> <a class="github-button" href="https://github.com/phillipsj/Cake.Ftp" data-icon="octicon-eye" data-style="mega" data-count-href="phillipsj/Cake.Ftp/watchers" data-count-api="/repos/phillipsj/Cake.Ftp#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch phillipsj/Cake.Ftp on GitHub">Watch</a> <a href="https://twitter.com/phillipsj73" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@phillipsj73</a>
+    <a class="github-button" href="https://github.com/cake-contrib/Cake.Ftp" data-icon="octicon-star" data-style="mega" data-count-href="cake-contrib/Cake.Ftp/stargazers" data-count-api="/repos/cake-contrib/Cake.Ftp#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star cake-contrib/Cake.Ftp on GitHub">Star</a> <a class="github-button" href="https://github.com/cake-contrib/Cake.Ftp" data-icon="octicon-eye" data-style="mega" data-count-href="cake-contrib/Cake.Ftp/watchers" data-count-api="/repos/cake-contrib/Cake.Ftp#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch cake-contrib/Cake.Ftp on GitHub">Watch</a> <a href="https://twitter.com/phillipsj73" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@phillipsj73</a>
 </p>
 
 ---
 
 ## Cake.Squirrel  
-* [Source Code (phillipsj/Cake.Squirrel)](https://github.com/phillipsj/Cake.Squirrel)
+* [Source Code (cake-contrib/Cake.Squirrel)](https://github.com/cake-contrib/Cake.Squirrel)
 
 Cake Addin to support Squirrel.Windows 
 
 <p>
-    <a class="github-button" href="https://github.com/phillipsj/Cake.Squirrel" data-icon="octicon-star" data-style="mega" data-count-href="phillipsj/Cake.Squirrel/stargazers" data-count-api="/repos/phillipsj/Cake.Squirrel#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star phillipsj/Cake.Squirrel on GitHub">Star</a> <a class="github-button" href="https://github.com/phillipsj/Cake.Squirrel" data-icon="octicon-eye" data-style="mega" data-count-href="phillipsj/Cake.Squirrel/watchers" data-count-api="/repos/phillipsj/Cake.Squirrel#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch phillipsj/Cake.Squirrel  on GitHub">Watch</a> <a href="https://twitter.com/phillipsj73" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@phillipsj73</a>
+    <a class="github-button" href="https://github.com/cake-contrib/Cake.Squirrel" data-icon="octicon-star" data-style="mega" data-count-href="cake-contrib/Cake.Squirrel/stargazers" data-count-api="/repos/cake-contrib/Cake.Squirrel#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star cake-contrib/Cake.Squirrel on GitHub">Star</a> <a class="github-button" href="https://github.com/cake-contrib/Cake.Squirrel" data-icon="octicon-eye" data-style="mega" data-count-href="cake-contrib/Cake.Squirrel/watchers" data-count-api="/repos/cake-contrib/Cake.Squirrel#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch cake-contrib/Cake.Squirrel on GitHub">Watch</a> <a href="https://twitter.com/phillipsj73" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@phillipsj73</a>
 </p>
 
 ---
 
 ## Cake.AppPackager   
-* [Source Code (phillipsj/Cake.AppPackager)](https://github.com/phillipsj/Cake.AppPackager)
+* [Source Code (cake-contrib/Cake.AppPackager)](https://github.com/cake-contrib/Cake.AppPackager)
 
 Cake Addin for creating UWP packages. 
 
 <p>
-    <a class="github-button" href="https://github.com/phillipsj/Cake.AppPackager" data-icon="octicon-star" data-style="mega" data-count-href="phillipsj/Cake.AppPackager/stargazers" data-count-api="/repos/phillipsj/Cake.AppPackager#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star phillipsj/Cake.AppPackager on GitHub">Star</a> <a class="github-button" href="https://github.com/phillipsj/Cake.AppPackager" data-icon="octicon-eye" data-style="mega" data-count-href="phillipsj/Cake.AppPackager/watchers" data-count-api="/repos/phillipsj/Cake.AppPackager#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch phillipsj/Cake.AppPackager on GitHub">Watch</a> <a href="https://twitter.com/phillipsj73" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@phillipsj73</a>
+    <a class="github-button" href="https://github.com/cake-contrib/Cake.AppPackager" data-icon="octicon-star" data-style="mega" data-count-href="cake-contrib/Cake.AppPackager/stargazers" data-count-api="/repos/cake-contrib/Cake.AppPackager#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star cake-contrib/Cake.AppPackager on GitHub">Star</a> <a class="github-button" href="https://github.com/cake-contrib/Cake.AppPackager" data-icon="octicon-eye" data-style="mega" data-count-href="cake-contrib/Cake.AppPackager/watchers" data-count-api="/repos/cake-contrib/Cake.AppPackager#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch cake-contrib/Cake.AppPackager on GitHub">Watch</a> <a href="https://twitter.com/phillipsj73" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@phillipsj73</a>
 </p>
 
 ---
 
-## Cake.AppPackager   
-* [Source Code (phillipsj/Cake.XdtTransform)](https://github.com/phillipsj/Cake.XdtTransform)
+## Cake.XdtTransform   
+* [Source Code (cake-contrib/Cake.XdtTransform)](https://github.com/cake-contrib/Cake.XdtTransform)
 
-Cake Addin for creating UWP packages. 
+Cake Addin for performing XdtTransforms. 
 
 <p>
-    <a class="github-button" href="https://github.com/phillipsj/Cake.XdtTransform" data-icon="octicon-star" data-style="mega" data-count-href="phillipsj/Cake.XdtTransform/stargazers" data-count-api="/repos/phillipsj/Cake.XdtTransform#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star phillipsj/Cake.XdtTransform on GitHub">Star</a> <a class="github-button" href="https://github.com/phillipsj/Cake.XdtTransform" data-icon="octicon-eye" data-style="mega" data-count-href="phillipsj/Cake.XdtTransform/watchers" data-count-api="/repos/phillipsj/Cake.XdtTransform#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch phillipsj/Cake.XdtTransform on GitHub">Watch</a> <a href="https://twitter.com/phillipsj73" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@phillipsj73</a>
+    <a class="github-button" href="https://github.com/cake-contrib/Cake.XdtTransform" data-icon="octicon-star" data-style="mega" data-count-href="cake-contrib/Cake.XdtTransform/stargazers" data-count-api="/repos/cake-contrib/Cake.XdtTransform#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star cake-contrib/Cake.XdtTransform on GitHub">Star</a> <a class="github-button" href="https://github.com/cake-contrib/Cake.XdtTransform" data-icon="octicon-eye" data-style="mega" data-count-href="cake-contrib/Cake.XdtTransform/watchers" data-count-api="/repos/cake-contrib/Cake.XdtTransform#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch cake-contrib/Cake.XdtTransform on GitHub">Watch</a> <a href="https://twitter.com/phillipsj73" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@phillipsj73</a>
 </p>
 
 ---
