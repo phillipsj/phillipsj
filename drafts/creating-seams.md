@@ -11,19 +11,18 @@ Tags:
 This is going to be a post about software architecture and design, the basic concept of how to allow for changes in your software or system by creating these joints or seams you will be able to make changes easily.
 
 // Need to make this a block qoute
-To get started, here is the [Merriam-Websters](https://www.merriam-webster.com/dictionary/seam) defintion of **Seam**:
+To get started, here is the defintion of **Seam**:
 
-1. the joining of two pieces (as of cloth or leather) by sewing usually near the edge
-2. the space between adjacent planks or strakes of a ship
-3. line, groove, or ridge formed by the abutment of edges
-4. a weak or vulnerable area or gap found a seam
+> 1. the joining of two pieces (as of cloth or leather) by sewing usually near the edge
+> 2. the space between adjacent planks or strakes of a ship
+> 3. line, groove, or ridge formed by the abutment of edges
+> 4. a weak or vulnerable area or gap found a seam
+> ^^ Merriam-Websters
 
 As you can tell, the fourth definition is the one that is what we are going to focus on. We want to put in a *weak* spot in our systems that will allow us to be able to make alterations. This term was first introducted to me in the book, [*Working effectively with Legacy Code*](http://amzn.to/2s8cQhZ) by [Micheal Feathers](https://twitter.com/mfeathers)
 
-
-// LEgacy code defition
-
-A seam in software is....
+> A seam is a place where you can alter behavior in your program without editing in in that place.
+> ^^ Micheal Feathers, Working effectively with Legacy Code
 
 ## Software Seams
 
@@ -41,7 +40,9 @@ Another way this can be performed is if you base your implementaiton on a higher
 
 ## Architecture Seams
 
-One could argue that design patterns and SOLID principles are all part of architecture and I wouldn't disagree.
+One could argue that design patterns and SOLID principles are all part of architecture and I wouldn't disagree. There still remains those higher level concepts that need addressed. Decisions of how each subsystem, groups of objects, communicate to build a complete application. 
+
+
 
 ## Integration Seams
 
