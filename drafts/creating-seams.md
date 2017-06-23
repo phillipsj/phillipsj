@@ -60,15 +60,19 @@ Microservices is an example of single responsibility.
 
 Enterprise Service Bus is an example of the mediator and gateway patterns.
 
-When you start thinking of system integration in terms that you already understand it starts making it easier to reason about system integration. There are tons of tools available to aid you in adding these seems.
+When you start thinking of system integration in terms that you already understand it starts making it easier to reason about system integration. There are tons of tools available to aid you in adding these seams.
 
 ### API Gateway
 
+The [API gateway pattern](http://microservices.io/patterns/apigateway.html) provides a gateway between your API consumer and your API implementation. This allows you to change the implementation without having to change the consumer. Other nice advantages of the API gateway is that some implementations collect analytics and provide authentication.
+
 ### Enterprise Service Bus
 
-### Service oriented architecture
+An enterprise services bus, ESB for short, provides some extra functionality, but gives you a seam that can decouple processes and systems. Most ESBs have functionality that handles relaying information, providing message queues, etc. Which all gives you flexibility when you have to integrate with external systems.
 
+### Service Oriented Architecture
 
+Service oriented architecture, SOA for short, can represent many things, but typically is used in reference to platforms that provide 
 
 // Almost a whole different post.
 Integration seams are always an interesting one for sure. [Jeremy Miller](https://jeremydmiller.com) did a recent post about the [different ways that microsrevices communicate](https://jeremydmiller.com/2017/05/24/how-should-microservices-communicate/). The part I want to focus on is the last section on *Avoiding these integration approaches*. It lists out three type sof integrations that you should try to avoid, I totally agree that you should avoid these types of integrations, I will be using examples where these types of integrations are useful, especially when trying to decouple from legacy systems.
