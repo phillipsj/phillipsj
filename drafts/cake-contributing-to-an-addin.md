@@ -117,7 +117,7 @@ namespace Cake.Squirrel {
         /// Gets or sets the URL to the remote releases folder. When pointing to GitHub, use the URL 
         /// to the repository root page, else point to an existing remote Releases folder
         /// </summary>
-        public Uri Url { get; set; }
+        public string Url { get; set; }
 
         /// <summary>
         /// Gets or sets the OAth token to use as login credentials.
@@ -166,10 +166,10 @@ Now that the settings are finished we just need to implement the *Run* method on
             if (settings.ReleaseDirectory != null) {
                 builder.Append("--releaseDir {0}", settings.ReleaseDirectory.FullPath);
             }
-            if (settings.Url != null) {
+            if (!string.IsNullOrWhitespace(settings.Url) {
                 builder.Append("--url {0}", settings.Url.ToString());
             }
-            if (!string.IsNullOrEmpty(settings.Token)) {
+            if (!string.IsNullOrWhitespace(settings.Token)) {
                 builder.Append("--token {0}", settings.Token);
             }
 
@@ -196,7 +196,7 @@ Now we just need to add the aliases for the *SyncReleasesRunner* to the *Squirre
         ///  .Does(() => {
         ///    var settings = new SyncReleasesSettings {
         ///        ReleaseDirectory = "pathToDirectory"
-        ///        Url = new Uri("https://someurl.com");
+        ///        Url = "https://someurl.com";
         ///        Token = "myToken"
         ///    }; 
         /// 
@@ -230,7 +230,7 @@ Now we just need to add the aliases for the *SyncReleasesRunner* to the *Squirre
         ///  .Does(() => {
         ///    var settings = new SyncReleasesSettings {
         ///        ReleaseDirectory = "pathToDirectory"
-        ///        Url = new Uri("https://someurl.com");
+        ///        Url = "https://someurl.com";
         ///        Token = "myToken"
         ///    }; 
         /// 
@@ -373,13 +373,13 @@ namespace Cake.Squirrel.Tests {
         public void Should_Add_Url_To_Arguments() {
             // Given 
             var fixture = new SyncReleasesRunnerFixture();
-            fixture.Settings.Url = new Uri("https://google.com");
+            fixture.Settings.Url = "https://google.com";
 
             // When
             var result = fixture.Run();
 
             // Then
-            result.Args.ShouldEqual("--url https://google.com/");
+            result.Args.ShouldEqual("--url https://google.com");
         }
     }
 }
