@@ -7,9 +7,9 @@ Tags:
 ---
 # Cake: Contributing to an Addin
 
-It feels good as an open source project creator when you get an issue opened in your GitHub repo. I received one earlier this week, when someone submitted an issue asking if support for [SyncReleases](https://github.com/cake-contrib/Cake.Squirrel/issues/16) could be added to [Cake.Squirrel](https://github.com/cake-contrib/Cake.Squirrel). After a little dicussion with the submitter, me asking if they would like to do the addition, we agreed it would be a little easier for me to do it. 
+It feels good as an open source project creator when you get an issue opened in your GitHub repo. I received one earlier this week, when someone submitted an issue asking if support for [SyncReleases](https://github.com/cake-contrib/Cake.Squirrel/issues/16) could be added to [Cake.Squirrel](https://github.com/cake-contrib/Cake.Squirrel). After a little discussion with the submitter, me asking if they would like to do the addition, we agreed it would be a little easier for me to do it. 
 
-In spirit of trying to get more contirbutors involved, I am going to document my thought process behind how I am going to add the supports.
+In the spirit of trying to get more contributors involved, I am going to document my thought process behind how I am going to add the support.
 
 ## Step 1: New addin or addition
 
@@ -21,7 +21,7 @@ This is adding a new feature to the addin and should have all development work i
 
 ## Step 3:  Create a new runner
 
-I opened the project and added two new classes called *SyncReleaesRunner* and *SyncReleasesSettings*. Now I just needed to inherit from the correct base classes provided by Cake. *SyncReleasesSettings* inherits from *ToolSettings*. 
+I opened the project and added two new classes called *SyncReleasesRunner* and *SyncReleasesSettings*. Now I just needed to inherit from the correct base classes provided by Cake. *SyncReleasesSettings* inherits from *ToolSettings*. 
 
 ```
 using Cake.Core.Tooling;
@@ -34,7 +34,7 @@ namespace Cake.Squirrel {
 }
 ```
 
-Then I added  the inheritance for the *SyncReleasesRunner* and implement the required methods.
+Then I added the inheritance for the *SyncReleasesRunner* and implemented the required methods.
 
 ```
 using System.Collections.Generic;
@@ -80,7 +80,7 @@ With those two things accomplished, I know have the bare bones implementation co
 
 ## Step 4: Identify parameters needed 
 
-The basics are in place, now creation of actual settings and the *Run* method for the runner need implemented. To do this, I typically download a copy of the tool or go to the documentation and lookup any parameters or settings I can pass. *SyncReleases* can be found by going [here](https://github.com/Squirrel/Squirrel.Windows/tree/master/src/SyncReleases) or by downloading a copy of Squirrel.Windows and running the following command.
+The basics are in place. Now the creation of actual settings and the *Run* method for the runner need implemented. To do this, I typically download a copy of the tool or go to the documentation and lookup any parameters or settings I can pass. *SyncReleases* can be found by going [here](https://github.com/Squirrel/Squirrel.Windows/tree/master/src/SyncReleases) or by downloading a copy of Squirrel.Windows and running the following command.
 
 ```
 $ .\SyncReleases.exe -h
@@ -256,9 +256,9 @@ public static void SyncReleases(this ICakeContext context, SyncReleasesSettings 
 
 ## Step 7: Unit testing
 
-The last and final step will be to add unit tests just to make sure that no huge mistakes have been made and to give confidence to the contributor that they didn't break anything when adding additional functionality.
+The last and final step will be to add unit tests just to make sure that no huge mistakes have been made and to give confidence to the contributor that they didn't break anything when adding functionality.
 
-There will need to be a new fixture created, and you guessed it, called *SyncReleasesRunnerFixture*. The Cake team has done an awesome job helping you out on creating this by creating a *ToolFixture* that you can inherit. It is a pretty sparse class and most of the work is done in the base class in this instance. You can see we reference the executable and call the *Run* method.
+There will need to be a new fixture created, and you guessed it, called *SyncReleasesRunnerFixture*. The Cake team has done an awesome job helping you out by creating a *ToolFixture* that you can inherit. It is a pretty sparse class and most of the work is done in the base class in this instance. You can see we reference the executable and call the *Run* method.
 
 ```
 using Cake.Testing.Fixtures;
