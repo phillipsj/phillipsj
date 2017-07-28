@@ -4,6 +4,7 @@ Published: 07/27/2017 19:48:13
 Tags: 
 - Open Source
 - Dotnet Core
+- Microsoft And Linux
 ---
 # .NET Core 2.0 Preview on Ubuntu
 
