@@ -7,9 +7,11 @@ Tags:
 ---
 # .NET Core 2.0 Preview on Ubuntu
 
-** This post is intended to developers that are new to Ubuntu **
+I have wanted to play with the new .NET core 2.0 preview and I wanted to do it on Ubuntu 16.04. So I am going to walk you through how to install it.
 
-I have wanted to play with the new .NET core 2.0 preview and I wanted to do it on Ubuntu 16.04. So I am going to walk you through how to install it. The first step is to have a working Ubuntu 16.04 system, this can be in the cloud, virtual, docker, or bare metal. Now that you have a working Ubuntu 16.04 system, lets follow the guide found [here](https://www.microsoft.com/net/core#linuxubuntu). This guide wants you to run the following commands:
+**This post is intended to developers that are new to Ubuntu**.
+
+The first step is to have a working Ubuntu 16.04 system, this can be in the cloud, virtual, docker, or bare metal. Now that you have a working Ubuntu 16.04 system, lets follow the guide found [here](https://www.microsoft.com/net/core#linuxubuntu). This guide wants you to run the following commands:
 
 ```
 sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
