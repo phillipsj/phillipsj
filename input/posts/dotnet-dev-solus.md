@@ -1,6 +1,6 @@
 ---
 Title: ".NET Core on Solus"
-Published: 08/28/2017 21:28:46
+Published: 09/13/2017 06:50:05
 Tags: 
 - Open Source
 - Dotnet Core
