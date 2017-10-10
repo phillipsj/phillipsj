@@ -1,8 +1,8 @@
 #tool nuget:?package=Wyam&prerelease
-#addin nuget:?package=Cake.Wyam&prerelease
-#addin nuget:?package=Cake.Netlify
-#addin nuget:?package=Cake.Npm
-#addin nuget:?package=Cake.Powershell
+#addin nuget:?package=Cake.Wyam&version=1.0.0
+#addin nuget:?package=Cake.Netlify&version=0.9.2
+#addin nuget:?package=Cake.Npm&version=0.11.0
+#addin nuget:?package=Cake.Powershell&version=0.3.5
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
