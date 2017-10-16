@@ -2,11 +2,15 @@ Title: Talks
 Image: images/microphone.jpg
 ---
 
-Here are the presentations that I have given. Listed by date, with the newest listed first. Links to the presentation and the video, if recorded, are provided.
+Here are the presentations that I have given. Links to the presentation and the video, if recorded, are provided.
 
 ## A DevOps Story
 * 2017 Code PaLOUsa
 * 2017 CodeStock
+
+## Putting your builds to work for you, a piece of Cake!
+* 2017 DevSpace
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/17JOyirNYOzbj" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/secret/17JOyirNYOzbj" title="Putting your builds to work for you, a piece of Cake!" target="_blank">Putting your builds to work for you, a piece of Cake!</a> </strong> from <strong><a href="https://www.slideshare.net/JamiePhillips15" target="_blank">Jamie Phillips</a></strong> </div>
 
 ## Putting your builds to work for you, a piece of Cake!
 * 2017 CodeStock
