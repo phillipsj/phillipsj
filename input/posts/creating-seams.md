@@ -10,7 +10,6 @@ Tags:
 
 This is going to be a post about software architecture and design, the basic concept of how to allow for changes in your software or system. By creating these joints or seams you will be able to make changes easily.
 
-// Need to make this a block quote
 To get started, here is the definition of **Seam**:
 
 > 1. the joining of two pieces (as of cloth or leather) by sewing usually near the edge
