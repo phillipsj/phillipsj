@@ -1,13 +1,15 @@
 ---
 Title: "How we Gitflow"
-Published: 11/07/2017 21:07:28
+Published: 11/08/2017 20:59:00
 Tags: 
+- Tools
+- Processes
 ---
 # How we Gitflow
 
-This question came up in a Twitter discussion, it was about using gitflow. I decided what a great opportunity to write a blog post.
+This question came up in a Twitter discussion, it was about using gitflow. What a great opportunity to write a blog post.
 
-At work we use gitflow for every size project, small to large. We have found it helps to keep a consistent workflow. We also have tied our semantic versioning into how we use gitflow, all of this is part of our CI/CD approach.
+At work, we use gitflow for every size project, small to large. We have found it helps to keep a consistent workflow. We also have tied our semantic versioning into how we use gitflow, all of this is part of our CI/CD approach.
 
 ## Our gitflow process
 
@@ -29,7 +31,7 @@ Sometimes we do have multiple hotfixes and releases in queue, but typically we d
 
 ## Versioning
 
-Now on to how we drive our versioning. We use semantic versioning for all of our applications. We use the tool [GitVersion]() to help use automate it. Our initial version is driven by the latest tagged version number, if one doesn't exist our first version number is **0.1.0**. We then automatically add tags to our versions based on branch and build number. Here is what it typically looks like for use using the version number.
+Now on to how we drive our versioning. We use semantic versioning for all of our applications. We use the tool [GitVersion](https://github.com/GitTools/GitVersion) to help use automate it. Our initial version is driven by the latest tagged version number, if one doesn't exist our first version number is **0.1.0**. We then automatically add tags to our versions based on branch and build number. Here is what it typically looks like for use using the version number.
 
 * Feature Branch -> 0.1.0~feature001
 * Develop Branch -> 0.1.0~alpha001
