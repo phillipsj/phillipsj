@@ -1,6 +1,6 @@
 ---
 Title: "Dapper Command-Query Separation"
-Published: 11/09/2017 08:38:13
+Published: 11/11/2017 09:02:50
 Tags: 
 - .NET
 - Dapper
@@ -9,7 +9,7 @@ Tags:
 ---
 # Dapper Command-Query Separation
 
-I am still a big fan of [Dapper]() and use it for most of my .NET projects that require database access. Over the years I have discovered that the repsoitory pattern seldomly meets my needs. Database queries and commands can get quite long and it makes it hard to find and reason about all that is happening in the repository class. After reading a blog post by Jimmy Bogard titled [CQRS Post](), I picked up this pattern for using Dapper.
+I am still a big fan of [Dapper](https://github.com/StackExchange/Dapper) and use it for most of my .NET projects that require database access. Over the years I have discovered that the repository pattern seldom meets my needs. Database queries and commands can get quite long and it makes it hard to find and reason about all that is happening in the repository class. After reading a blog post by Jimmy Bogard from several years ago, I picked up this pattern and started using it with Dapper.
 
 ## Example Query
 
@@ -23,7 +23,7 @@ public interface IQuery<T> {
 }
 ```
 
-Here is an implementation of the how you use the query.
+Here is an implementation of the how you use the interface.
 
 ```
 using System.Data;
@@ -53,6 +53,10 @@ public PetDetailViewModel GetPetDetail(int id){
 }
 ```
 
+## Example Command
+
+Here is the interface for the command.
+
 ```
 using System.Data
 
@@ -60,6 +64,8 @@ public interface ICommand {
     void Execute(IDbConnection conncetion);
 }
 ```
+
+Here is an implementation of the how you use the interface. 
 
 ```
 using System.Data;
@@ -79,9 +85,15 @@ public class UpdatePet : ICommand {
 }
 ```
 
+Now this is how you would use it.
+
 ```
 public void Update(PetUpdateViewModel pet){
     IDbConnection connection = new SqlConnection("");
     return new UpdatePet(pet).Execute(connection);
 }
 ```
+
+## Conclusion
+
+This is a very simple implementation and works for the types of apps I am typically creating. It isn't a one size fits all approach and we still use other techniques along with ORMs to get the job done. 
