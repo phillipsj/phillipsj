@@ -26,7 +26,7 @@ As you can tell, the fourth definition is the one that is what we are going to f
 
 ## Software Seams
 
-There are many different techniques and tools that help to create these seams. Design patterns like the [Gang of Four](http://amzn.to/2qvPC58) or [SOLID](https://goo.gl/8cfmsN) principles to name a couple. Below I will go into more details
+There are many different techniques and tools that help to create these seams. Design patterns like the [Gang of Four](http://amzn.to/2qvPC58) or [SOLID](https://goo.gl/8cfmsN) principles to name a couple. Below I will go into more detail.
 
 ### Design Patterns
 
