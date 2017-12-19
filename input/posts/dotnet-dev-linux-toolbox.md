@@ -1,19 +1,19 @@
 ---
-Title: "Linux toolbox for Dotnet Development"
-Published: 08/01/2017 21:28:46
+Title: "Linux toolbox for .NET Development"
+Published: 12/17/2017 16:35:28
 Tags: 
 - Open Source
-- Dotnet Core
+- .NET Core
 - Microsoft And Linux
 - Tools
 ---
-# Linux toolbox for Dotnet Development
+# Linux toolbox for .NET Development
 
-This is going to be my list of the tools that I setup when doing .NET development on Linux. I know my future self is going to refernce this and I hope others find it useful.
+This is going to be my list of the tools that I setup when doing .NET development on Linux. I know my future self is going to reference this and I hope others find it useful.
 
 ## .NET SDKs
 
-This is pretty easy, you need to have .NET core at a minimum. I do find having Mono installed is useful sometimes when a particular tool you need to use is not availabe on .NET core or you need to create a Mono/Xamarin app.
+This is pretty easy, you need to have .NET core at a minimum. I do find having Mono installed is useful sometimes when a particular tool you need to use is not available on .NET core or you need to create a Mono/Xamarin app.
 
 * [.NET Core SDK](https://www.microsoft.com/net/core#linuxubuntu)
 * [Mono](http://www.mono-project.com/download/#download-lin-ubuntu)
@@ -27,7 +27,7 @@ There are many choices in this area thanks to the [Omnisharp project](http://www
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [JetBrains Rider](https://www.jetbrains.com/rider/)
 
-There is always [Mono-Develop](http://www.monodevelop.com/download/linux/), but it will require Flatpak to get the latest verison.
+There is always [Mono-Develop](http://www.monodevelop.com/download/linux/), but it will require Flatpak to get the latest version.
 
 ## Visual git Guis
 
