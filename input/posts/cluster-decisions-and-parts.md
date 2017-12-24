@@ -1,5 +1,5 @@
 ---
-Title: "Cluster Decisions and parts"
+Title: "Cluster Decisions and Parts"
 Published: 12/24/2017 13:17:56
 Tags:
 - Cloud
@@ -8,7 +8,7 @@ Tags:
 - Containers
 - RaspberryPi 
 ---
-# Cluster Decisions and parts
+# Cluster Decisions and Parts
 
 In my last post I outlined several decisions that I would need to make when deciding how to create my container cluster using Raspberry Pis. Here are my the parts that I ordered and the all the decisions that I have finalized.
 
