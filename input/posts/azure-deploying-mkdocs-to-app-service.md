@@ -11,7 +11,7 @@ Tags:
 
 [MkDocs](http://www.mkdocs.org/) is an great tool to use to build project documentation. My team at work has been using it to create system documentation, consisting of user guides, features, etc. We may look to start using [Wyam](https://wyam.io/) for this in the future, for now, MkDocs has served us and it works on Windows with minimum fuss. As with all of our newer sites, we are hosting on Azure using App Service, with the minimum amount of traffic our documentation receives, free or shared plans work the best. 
 
-I am going to walk you all through how to configure the App Service and the continuos deployment feature that is present. So here goes:
+I am going to walk you all through how to configure the App Service and the continuous deployment feature that is present. So here goes:
 
 **I will use the term *blade*, that refers to the panels that slide out in Azure.**
 

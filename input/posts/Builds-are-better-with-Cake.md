@@ -14,7 +14,7 @@ We narrowed it down to [Psake](https://github.com/psake/psake), [Fake](http://fs
 
 I have used all of these in the past, except for Cake. It is one of the newer build systems on the scene and it just so happens to use C# for its syntax. I have been happy with all, but considering we all primarily work in C#, it just seemed like Cake would be the best fit.
 
-After having worked with Cake for the last two weeks converting the Orchard build from MSBuild file to Cake, I can say that Cake is now easily my favorite build tool and I cannot forsee wanting to use much of anything else. The community has been great and helpful, most of the important tooling has already been created, the only thing that I have had an issue with is changing my way of thinking. The shift from MSBuild to a build tool like Cake, sometimes throws your mind for a loop.
+After having worked with Cake for the last two weeks converting the Orchard build from MSBuild file to Cake, I can say that Cake is now easily my favorite build tool and I cannot foresee wanting to use much of anything else. The community has been great and helpful, most of the important tooling has already been created, the only thing that I have had an issue with is changing my way of thinking. The shift from MSBuild to a build tool like Cake, sometimes throws your mind for a loop.
 
 Cake supports of using MSBuild tasks, extra file helpers, Slack integration, etc. all come in the form of an Addin.  Cake is easily extending using their Addin structure, just add a little C# to a project, and Cake can now use that new feature.
 

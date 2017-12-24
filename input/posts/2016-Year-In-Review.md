@@ -12,9 +12,9 @@ Not something that I have done in the past, but I think it is something that I s
 
 ## Personal
 
-Going to kick this off with what has happened personally. I have really stepped up in my OSS participation and have made several contributions to [Cake](http://cakebuild.net/). I have also been able to author my own projects, most being addins for Cake. I have had several opportunites present themselves this year and those opportunites are not yet fully realized. 
+Going to kick this off with what has happened personally. I have really stepped up in my OSS participation and have made several contributions to [Cake](http://cakebuild.net/). I have also been able to author my own projects, most being addins for Cake. I have had several opportunities present themselves this year and those opportunities are not yet fully realized. 
 
-Participation in user groups has increased and I am finally finding the user groups that I am eager to always attend. I have also had the privilege again to present at [CodeStock](http://www.codestock.org/) 2016 and I look forward to the oppurtunity to make it three consecutive years. 
+Participation in user groups has increased and I am finally finding the user groups that I am eager to always attend. I have also had the privilege again to present at [CodeStock](http://www.codestock.org/) 2016 and I look forward to the opportunity to make it three consecutive years. 
 
 Finally, I have a few other *outreach* related items that I spent some time planning in Late 2016 and I hope I am able to materialize some of those.
 

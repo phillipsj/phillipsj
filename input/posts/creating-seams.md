@@ -18,14 +18,14 @@ To get started, here is the definition of **Seam**:
 > 4. a weak or vulnerable area or gap found a seam
 > ^^ Merriam-Webster's
 
-As you can tell, the fourth definition is the one that is what we are going to focus on. We want to put in a *weak* spot in our systems that will allow us to be able to make alterations. This term was first introduced to me in the book, [*Working effectively with Legacy Code*](http://amzn.to/2s8cQhZ) by [Michael Feathers](https://twitter.com/mfeathers)
+As you can tell, the fourth definition is the one that is what we are going to focus on. We want to put in a *weak* spot in our systems that will allow us to be able to make alterations. This term was first introduced to me in the book, [*Working effectively with Legacy Code*](http://amzn.to/2DHgA0L) by [Michael Feathers](https://twitter.com/mfeathers)
 
 > A seam is a place where you can alter behavior in your program without editing it in that place.
 > ^^ Michael Feathers, Working effectively with Legacy Code
 
 ## Software Seams
 
-There are many different techniques and tools that help to create these seams. Design patterns like the [Gang of Four](http://amzn.to/2qvPC58) or [SOLID](https://goo.gl/8cfmsN) principles to name a couple. Below I will go into more detail.
+There are many different techniques and tools that help to create these seams. Design patterns like the [Gang of Four](http://amzn.to/2D67YzB) or [SOLID](https://goo.gl/8cfmsN) principles to name a couple. Below I will go into more detail.
 
 ### Design Patterns
 
