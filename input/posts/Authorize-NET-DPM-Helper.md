@@ -9,7 +9,7 @@ RedirectFrom: blog/html/2015/02/26/authorize_net_dpm_helper
 
 I recently started diving into learning about payment gateways and payment processing. This is a new area for me and there a lot to learn. After Authorize .NET was settled on as our payment gateway, I went about the task of learning their .NET SDK. There are way to many options and I do not understand the pros and cons of each method, but after reading their documentation I settled on using their Direct Post Method (DPM) as it limited our exposure to sensitive information and the featureset is perfect for what we are currently doing.
 
-However, their example is a little rudimentary and just writes the HTML for the form using string concatenation and would be hard to maintain and customize. So I was curious as to what it would take to create an HTML helper for ASP .NET MVC that would be similiar to Html.BeginForm, so that way I could build by form using razor while still using their open and end form methods.
+However, their example is a little rudimentary and just writes the HTML for the form using string concatenation and would be hard to maintain and customize. So I was curious as to what it would take to create an HTML helper for ASP .NET MVC that would be similar to Html.BeginForm, so that way I could build by form using razor while still using their open and end form methods.
 
 \*I decided to try gists compared to the default highlighting in Tinkerer.
 
