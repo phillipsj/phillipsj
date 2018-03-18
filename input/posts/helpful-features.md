@@ -1,5 +1,5 @@
 ---
-Title: "Helpful features"
+Title: "Helpful Features"
 Published: 03/17/2018 20:30:37
 Tags: 
 - Open Source
@@ -8,9 +8,9 @@ Tags:
 - Grails
 - Spring Boot
 ---
-# Helpful features
+# Helpful Features
 
-I have been learning other languages and frameworks. The frameworks that I have been learning are [Django](https://www.djangoproject.com/), [Grails](https://grails.org/), and [Spring Boo](https://projects.spring.io/spring-boot/). Each of of these frameworks bring a few interesting features to the table. Some of those features have been borrowed from frameworks like [Rails](http://rubyonrails.org/). 
+I have been learning other languages and frameworks. The frameworks that I have been learning are [Django](https://www.djangoproject.com/), [Grails](https://grails.org/), and [Spring Boot](https://projects.spring.io/spring-boot/). Each of of these frameworks bring a few interesting features to the table. Some of those features have been borrowed from frameworks like [Rails](http://rubyonrails.org/). 
 
 I have been using ASP .NET MVC since the version 2.0 beta. It has come a long way, but it seems that it just doesn't have some of these interesting features. I am going to highlight some of these features, I know some are trivial to implement, but I feel they would bring a lot to the table when rapid prototyping or introducing the framework to someone new.
 
@@ -29,7 +29,7 @@ public ViewResult Details(int id)
 }
 ```
 
-There are other *null* checks that we could perform or other ways to handle it. In Django, this would be how this would be handled.
+There are other *null* checks that we could perform or other ways to handle it. In Django, this would be how this would be done.
 
 ```
 def details(request, book_id):
