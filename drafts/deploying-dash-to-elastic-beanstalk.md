@@ -115,7 +115,7 @@ $ python3 application.py
 
 Navigate to http://localhost:8080 and you should see the following.
 
-**TODO:  Insert Screenshot Here**
+![](/images/dash/dash-running-locally.jpg)
 
 # Step 5: The Dockerfile
 
@@ -139,4 +139,4 @@ $ docker run -it --rm -p 3000:8080 dash-example
 
 Navigate to *http://localhost:3000/* and you should see this page again.
 
-** TODO: Insert Image here**
+![](/images/dash/dash-running-locally.jpg)
