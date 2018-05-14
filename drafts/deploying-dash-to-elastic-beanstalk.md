@@ -117,7 +117,7 @@ Navigate to http://localhost:8080 and you should see the following.
 
 ![](/images/dash/dash-running-locally.jpg)
 
-# Step 5: The Dockerfile
+## Step 5: The Dockerfile
 
 Let's open the *Dockferfile.local* in your favorite text editor and add the following.
 
@@ -140,3 +140,7 @@ $ docker run -it --rm -p 3000:8080 dash-example
 Navigate to *http://localhost:3000/* and you should see this page again.
 
 ![](/images/dash/dash-running-locally.jpg)
+
+## Step 6: Packaging for Beanstalk
+
+## Step 7: Manually Deploying to Beanstalk

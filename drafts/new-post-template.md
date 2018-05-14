@@ -1,6 +1,0 @@
----
-Title: 
-Published: 
-Tags:
----
-
