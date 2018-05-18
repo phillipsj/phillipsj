@@ -139,8 +139,70 @@ $ docker run -it --rm -p 3000:8080 dash-example
 
 Navigate to *http://localhost:3000/* and you should see this page again.
 
-![](/images/dash/dash-running-locally.jpg)
+![](/images/dash/dash-running-locally.png)
+
+Now we are ready to deploy to beanstalk.
 
 ## Step 6: Packaging for Beanstalk
 
+At this point you can use the [Elastic Beanstalk CLI](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html) or you can create an zip file that can be uploaded from the portal. We are going to choose the zip file approach.
+
+So open your command prompt and type the following in the dash-example folder.
+
+```
+$ zip dash-example.zip application.py requirements.txt
+```
+
+Now you have a zip file with all the files needed by Elastic Beanstalk.
+
 ## Step 7: Manually Deploying to Beanstalk
+
+Log int your AWS console and navigate to Elastic Beanstalk.
+
+We are going to create a new application by using the upper right hand link.
+
+![](/images/dash/create-app.png)
+
+Now we are going to name the application and give it a description. I am going to keep it simple.
+
+![](/images/dash/naming-app.png)
+
+You should end up on the following screen.
+
+![](/images/dash/created-app.png)
+
+Now we are going to create an environment. An environment in elastic beanstalk is a unique deployment of an application. You can have as many environments as you like with different configurations. Another nice feature is that you can *hot-swap* the URLs between environments, this allows you to do blue-green deployments.
+
+So, click on the *Create one now.* in the center of the screen to create an environment.
+
+![](/images/dash/create-env.png)
+
+Stay with the *Web server environment* option here,
+
+![](/images/dash/web-server.png)
+
+Now you will end up on the *Create a new environment* screen. Let's change the *Environment information* section to match below.
+
+![](/images/dash/env-info.png)
+
+Now lets do the *Base configuration* section. This is where you will upload the zip file we created and select the preconfigured python image.
+
+![](/images/dash/base-config.png)
+
+Okay, we are getting close, all you have to do is to click *Create Environment*.  You should now be staring at the following screen.
+
+![](/images/dash/eb-console.png)
+
+Once that is complete, you should see the following screen. 
+
+![](/images/dash/ok.png)
+
+Now click on the the URL near the top and you should see this running from Elastic Beanstalk.
+
+![](/images/dash/final.png)
+
+## Guide Completed
+
+Well if you made it this far, thank you for sticking around and reading. I hope you found this helpful and informative. I hope to have more AWS content over the next few weeks. As always, don't hesitate to reach out to me on social media or Github.
+
+
