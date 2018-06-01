@@ -12,3 +12,5 @@ packages\.xml
 
 *.dll
 *.hash
+
+config.wyam.packages.xml
