@@ -17,7 +17,7 @@ I decided I would do a full install on my extra machine and see what it has to o
 
 So, here I sit with a beautiful new desktop environment that is great to use. I went to the .NET core [homepage](https://www.microsoft.com/net/core#linuxdebian) and opened up the examples for Debian Linux. I decided I would install the libraries listed in their version, then do the download of the tar and give it a try.
 
-Here is what I was greated with:
+Here is what I was greeted with:
 
 ```
 $ sudo eopkg install curl libunwind gettext
@@ -26,7 +26,7 @@ curl  gettext  libunwind
 No packages to install.
 ```
 
-Wow, all the depedencies are already installed. Just move to step 2.
+Wow, all the dependencies are already installed. Just move to step 2.
 
 ```
 $ curl -sSL -o dotnet.tar.gz https://aka.ms/dotnet-sdk-2.0.0-linux-x64
