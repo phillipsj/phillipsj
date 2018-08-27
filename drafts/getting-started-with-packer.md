@@ -72,4 +72,51 @@ This will create a very basic structure that allows us to expand any tooling ima
 Open the main.json file and let's get hacking.
 
 ```
+{
+    "variables": {              
+    },
+    "builders": [
+        {
+          "type": "docker",
+          "image": "ubuntu:18.04",
+          "commit": true,
+          "message": "Packer"
+        }
+    ],  
+    "provisioners": [
+      {
+        "type": "shell",
+        "inline": [
+          "apt-get update",
+          "apt-get upgrade -y",
+          "apt-get install curl -y"
+        ]
+      }
+    ]
+}
+```
+
+Here is what is happening, we are going to use a docker builder and pull done Ubuntu 18.04 as our base image and then we are going to provision using inline shell.  
+
+Now let's run it.
+
+```
+~$ packer build main.json
+```
+
+When that is complete, let's look for the image in docker.
+
+```
+~$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+<none>              <none>              8896aa498f01        12 seconds ago      144MB
+```
+
+Now that Docker is out of the way, let's create a Hyper-V image.
+
+## Adding Hyper-V
+
+We are going to add a builder, but we don't have to add a provisioner.
+
+```
 ```
