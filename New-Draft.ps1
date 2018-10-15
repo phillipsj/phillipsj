@@ -7,6 +7,9 @@ param(
     $Tags
 )
 $name = $Title -replace "\s+","-"
+$name = $name -replace "\.+","dot"
+$name = $name -replace "\'+", ""
+$name = $name -replace "\,", ""
 $name = $name.ToLower()
 $invalid = [System.IO.Path]::GetInvalidFileNameChars()
 $regex = "[$([Regex]::Escape($invalid))]"
