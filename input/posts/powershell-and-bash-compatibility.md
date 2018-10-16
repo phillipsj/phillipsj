@@ -1,6 +1,6 @@
 ---
 Title: "PowerShell and Bash Compatibility"
-Published: 10/16/2018 08:03:07
+Published: 10/16/2018 16:30:07
 Tags: 
 - Open Source
 - PowerShell
