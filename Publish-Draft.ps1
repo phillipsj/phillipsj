@@ -1,4 +1,4 @@
-#! /usr/bin/pwsh
+#! /snap/bin/pwsh
 
 param(
     [string]
