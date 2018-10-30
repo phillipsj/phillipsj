@@ -1,6 +1,6 @@
 ---
 Title: "Mounting Azure Blob Storage Locally"
-Published: 10/27/2018 21:14:11
+Published: 10/29/2018 21:14:11
 Tags: 
 - Open Source
 - Microsoft And Linux
