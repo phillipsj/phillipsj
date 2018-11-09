@@ -11,13 +11,13 @@ Tags:
 ---
 # Working with SQL Server on Linux for .NET Development
 
-Being .NET developer I find myself working with [SQL Server](https://www.microsoft.com/en-us/sql-server/) all the time, even thought that seems to be slowly changing to [PostgreSQL](https://www.postgresql.org/). In the past this would limit my ability to do full time development on Linux because I would still need a Windows box to run SQL Server or use a hosted solution. This doesn't work so well when you are doing development in your free time as it is cost prohibitive. Fortunately, Microsoft has released [SQL Server for Linux](https://www.microsoft.com/en-us/sql-server/sql-server-2017-linux) just last year and at the same time started producing Docker containers for it. You can find the list of Docker containers [here](https://hub.docker.com/r/microsoft/mssql-server/) all based on Ubuntu.
+Being .NET developer I find myself working with [SQL Server](https://www.microsoft.com/en-us/sql-server/) all the time, even though that seems to be slowly changing to [PostgreSQL](https://www.postgresql.org/). In the past, this would limit my ability to do full-time development on Linux because I would still need a Windows box to run SQL Server or use a hosted solution. This doesn't work so well when you are doing development in your free time as it is cost prohibitive. Fortunately, Microsoft has released [SQL Server for Linux](https://www.microsoft.com/en-us/sql-server/sql-server-2017-linux) just last year and at the same time started producing Docker containers for it. You can find the list of Docker containers [here](https://hub.docker.com/r/microsoft/mssql-server/) all based on Ubuntu.
 
 This post is going to walk through getting SQL Server running in a container and how to connect to it from an ASP .NET core application for doing local development. Let's get started.
 
 ## SQL Server 2017 Container
 
-Make sure that you have Docker installed on your system, if you are having trouble getting it installed on your distro please reach out and I can help. I will be running all my commands as myself and not as the super user. If you haven't followed these [steps](https://docs.docker.com/install/linux/linux-postinstall/) on Docker's website, I would encourage you to do so. If you don't want to do that, then make sure that you put *sudo* in front of these docker commands.
+Make sure that you have Docker installed on your system, if you are having trouble getting it installed on your distro please reach out and I can help. I will be running all my commands as myself and not as the superuser. If you haven't followed these [steps](https://docs.docker.com/install/linux/linux-postinstall/) on Docker's website, I would encourage you to do so. If you don't want to do that, then make sure that you put *sudo* in front of these docker commands.
 
 Pulling down the image:
 
@@ -38,7 +38,7 @@ Digest: sha256:1bbf3b11687ce4d97eb5e6b6e61ccc500d0eff92f92e51893112a3fc665ce7b7
 Status: Downloaded newer image for mcr.microsoft.com/mssql/server:latest
 ```
 
-Now that we have the image, we need to start it up and connect to it to make sure it is operating as we expect. The container requires a the following flags to be set when starting:
+Now that we have the image, we need to start it up and connect to it to make sure it is operating as we expect. The container requires the following flags to be set when starting:
 
 * ACCEPT_EULA
 * SA_PASSWORD
@@ -60,7 +60,7 @@ Adding a connection in Data Studio
 
 ![](/images/linuxsql/StudioConnected.png)
 
-Great, we have a working SQL Server database running locally and we can connect to it. In the next section we are going to use an example application to show how it works with ASP .NET Core and Entity Framework core.
+Great, we have a working SQL Server database running locally and we can connect to it. In the next section, we are going to use an example application to show how it works with ASP .NET Core and Entity Framework core.
 
 ## ASP .NET Core application with Entity Framework Core
 
@@ -88,7 +88,7 @@ Time Elapsed 00:00:08.74
 
 Great! Now let's get to creating our models. We are going to model pets and pet owners and we will define items in a single file since it is such a simple example.
 
-Let's start by create the Model.cs class:
+Let's start by creating the Model.cs class:
 
 ```Bash
 $ cd Models
@@ -126,16 +126,16 @@ namespace EfOnLinux.Models {
 }
 ```
 
-Now we need to wire up the database context with the dependency injection framework. To do tis open *Startup.cs* and add the add the new lines.
+Now we need to wire up the database context with the dependency injection framework. To do this open *Startup.cs* and add the add the new lines.
 
-First add the new using statements:
+First, add the new using statements:
 
 ```C#
 using EfOnLinux.Models;
 using Microsoft.EntityFrameworkCore;
 ```
 
-With those added to the list of using statements we can now modify the *ConfigureServices* method to add our code.
+With those added to the list of using statements, we can now modify the *ConfigureServices* method to add our code.
 
 ```C#
 public void ConfigureServices(IServiceCollection services)
@@ -254,9 +254,9 @@ Navigate to *https://localhost:5001/owners* and you should see this:
 
 ![](/images/linuxsql/OwnersIndex.png)
 
-Now add a few Owners and lets see if they show up in the SQL Server running on Linux in a docker container.
+Now add a few Owners and let's see if they show up in the SQL Server running on Linux in a docker container.
 
-Owner add on the website:
+Adding an owner on the website:
 
 ![](/images/linuxsql/OwnerWeb.png)
 
@@ -266,7 +266,7 @@ Owner in the database:
 
 ## Conclusion
 
-Hope this helps demonstrate that you can have a full development experience on Linux using all the tools that you are comfortable or familiar with using. Feel free to ask for any follow up posts.
+Hope this helps to demonstrate that you can have a full development experience on Linux using all the tools that you are comfortable or familiar with using. Feel free to ask for any follow-up posts.
 
 Thanks for reading,
 
