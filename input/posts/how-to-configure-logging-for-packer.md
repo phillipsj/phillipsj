@@ -1,6 +1,6 @@
 ---
 Title: "How to configure logging for Packer"
-Published: 11/24/2018 21:05:53
+Published: 11/25/2018 13:05:53
 Tags: 
 - Open Source
 - PowerShell
