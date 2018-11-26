@@ -1,6 +1,6 @@
 ---
 Title: "How to configure logging for Terraform"
-Published: 11/24/2018 21:52:26
+Published: 11/25/2018 20:52:26
 Tags: 
 - Open Source
 - PowerShell
