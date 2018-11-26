@@ -4,11 +4,15 @@
   "description": "Node packages for my blog.",
   "main": "index.js",
   "dependencies": {
-    "netlify-cli": "^1.1.0"
+    "netlify-cli": "^2.2.1"
   },
   "devDependencies": {},
   "scripts": {
-    "deploy": "netlify deploy output"
+    "postinstall": "dotnet tool install -g Wyam.Tool",
+    "build" : "wyam --recipe Blog --theme CleanBlog --update-packages",
+    "start": "wyam --recipe Blog --theme CleanBlog --update-packages --preview --watch",
+    "prepublish": "npm run build",
+    "publish": "./node_modules/.bin/netlify deploy --dir=output --prod"
   },
   "repository": {
     "type": "git",
