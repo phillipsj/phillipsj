@@ -10,7 +10,7 @@ Tags:
 ---
 # You told me to use Make, but I'm on Windows
 
-In my [last]() post, I showed you how to use Make to build .NET Core applications. Now you may be saying, hey what do I do on Windows. Well, I mentioned in my last post about *nmake*, but I didn't provide much detail other than a reference to the documentation. With that said, here is how you get started with nmake.
+In my [last](https://www.phillipsj.net/posts/building-dotnet-core-apps-old-school-with-make) post, I showed you how to use Make to build .NET Core applications. Now you may be saying, hey what do I do on Windows. Well, I mentioned in my last post about *nmake*, but I didn't provide much detail other than a reference to the documentation. With that said, here is how you get started with nmake.
 
 ## Install Visual C++ Development Tools
 
