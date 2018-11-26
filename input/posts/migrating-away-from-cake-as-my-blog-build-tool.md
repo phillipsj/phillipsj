@@ -12,7 +12,7 @@ Tags:
 ---
 # Migrating away from Cake as my blog build tool
 
-I have been using [Wyam](https://wyam.io/) as my blog engine for almost two years. As part of using Wyam, I have been using the awesome [Cake.Wyam]() addin for building my blog. I have paired that along with a few other Cake addins to create a Cake build script that orchestrates my builds. With [Wyam 2.0](https://wyam.io/blog/version-2.0) being release and the .NET Core global tool now existing I have decided that I am going to move to a much simpler build script. This post is going to serve as the guide to how I migrated away.
+I have been using [Wyam](https://wyam.io/) as my blog engine for almost two years. As part of using Wyam, I have been using the awesome [Cake.Wyam]() addin for building my blog. I have paired that along with a few other Cake addins to create a Cake build script that orchestrates my builds. With [Wyam 2.0](https://wyam.io/blog/version-2.0) being released and the .NET Core global tool now existing I have decided that I am going to move to a much simpler build script. This post is going to serve as the guide to how I migrated away.
 
 ## Tools used in Cake
 
@@ -42,7 +42,7 @@ Since I am using the Netlify CLI tool, I am just going to make my entire build p
 }
 ```
 
-I am just hooking into the NPM standard scripts. I install the global .NET Core tool automatically after I execute NPM *install* helps since you only have to run one command. I have configured a plain *build* command, then I leveraged the *start* default command to execute the preview with a watch. Finally, I created a *predeploy* and *deploy* scripts to wire up running the build then deploying to Netlify. With all of this complete, I here is me running Wyam using the NPM scripts.
+I am just hooking into the NPM standard scripts. I install the global .NET Core tool automatically after I execute NPM *install* helps since you only have to run one command. I have configured a plain *build* command, then I leveraged the *start* default command to execute the preview with a watch. Finally, I created a *predeploy* and *deploy* scripts to wire up running the build then deploying to Netlify. With all of this complete, here is me running Wyam using the NPM scripts.
 
 ```Bash
 $ npm start
