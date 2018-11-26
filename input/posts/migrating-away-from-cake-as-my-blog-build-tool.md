@@ -61,6 +61,6 @@ Works like a charm, I just need to modify my AppVeyor build to execute my npm pu
 
 ## Conclusion
 
-Thanks for reading along and I hope you found this useful.
+Thanks for reading along and I hope you find this useful.
 
 Jamie
