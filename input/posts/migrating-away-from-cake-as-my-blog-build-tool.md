@@ -37,12 +37,12 @@ Since I am using the Netlify CLI tool, I am just going to make my entire build p
   "postinstall": "dotnet tool install -g Wyam.Tool",
   "build" : "wyam --recipe Blog --theme CleanBlog --update-packages",
   "start": "wyam --recipe Blog --theme CleanBlog --update-packages --preview --watch",
-  "prepublish": "npm run build",
-  "publish": "./node_modules/.bin/netlify deploy --dir=output --prod"
+  "predeploy": "npm run build",
+  "deploy": "./node_modules/.bin/netlify deploy --dir=output --prod"
 }
 ```
 
-I am just hooking into the NPM standard scripts for all of these except the standalone *build* step. I install the global .NET Core tool automatically after I execute NPM *install* helps since you only have to run one command. I have configured a plain *build* command, then I leveraged the *start* default command to execute the preview with a watch. Finally, I hooked into the *prepublish* and *publish* defaults to wire up running the build then deploying to Netlify. With all of this complete, I here is me running Wyam using the NPM scripts.
+I am just hooking into the NPM standard scripts. I install the global .NET Core tool automatically after I execute NPM *install* helps since you only have to run one command. I have configured a plain *build* command, then I leveraged the *start* default command to execute the preview with a watch. Finally, I created a *predeploy* and *deploy* scripts to wire up running the build then deploying to Netlify. With all of this complete, I here is me running Wyam using the NPM scripts.
 
 ```Bash
 $ npm start

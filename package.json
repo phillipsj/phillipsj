@@ -11,8 +11,8 @@
     "postinstall": "dotnet tool install -g Wyam.Tool",
     "build" : "wyam --recipe Blog --theme CleanBlog --update-packages",
     "start": "wyam --recipe Blog --theme CleanBlog --update-packages --preview --watch",
-    "prepublish": "npm run build",
-    "publish": "./node_modules/.bin/netlify deploy --dir=output --prod"
+    "predeploy": "npm run build",
+    "deploy": "./node_modules/.bin/netlify deploy --dir=output --prod"
   },
   "repository": {
     "type": "git",
