@@ -1,20 +1,20 @@
 ---
-Title: "Deploying Dash to Azure AppService"
+Title: "Deploying Dash to Azure App Service"
 Published: 11/30/2018 22:43:45
 Tags: 
 - Azure
 - Cloud
 - Python
 ---
-# Deploying Dash to Azure AppService
+# Deploying Dash to Azure App Service
 
-Before I get started on how to deploy a Dash app to Azure AppService, I am going cover Dash. [Dash](https://plot.ly/products/dash/) is a Python framework for building dashboards using [Plotly](https://plot.ly/) for building your charts and graphs. Dash also uses [Flask](http://flask.pocoo.org/) and [React](https://reactjs.org/).
+Before I get started on how to deploy a Dash app to Azure App Service, I am going cover Dash. [Dash](https://plot.ly/products/dash/) is a Python framework for building dashboards using [Plotly](https://plot.ly/) for building your charts and graphs. Dash also uses [Flask](http://flask.pocoo.org/) and [React](https://reactjs.org/).
 
 Since Dash is based on Flask, we can use the standard Python Docker container and any Flask tutorial for Docker as a reference. That is one advantage that I will give to Azure is that it just uses standard container images.
 
 ## Step 1: Create Dash Virtual Environment
 
-As with any Python project, lets create a virtaul environment for our dash app. This tutorial will assume you are working on Ubuntu.
+As with any Python project, let's create a virtual environment for our dash app. This tutorial will assume you are working on Ubuntu.
 
 ```Bash
 $ cd ~
@@ -29,7 +29,7 @@ $ source .venvs/dash/bin/activate
 
 ## Step 2: Setup the project folder
 
-Now lets create a folder and the initial files that we will need.
+Now let's create a folder and the initial files that we will need.
 
 ```Bash
 $ mkdir dash-azure && cd .
@@ -46,7 +46,7 @@ That is it! We will only need these two files to get it working.
 
 ## Step 3: Install Dash packages and freeze
 
-Now we just need to install our depedencies.
+Now we just need to install our dependencies.
 
 ```Bash
 pip install dash==0.30.0
@@ -214,7 +214,7 @@ Now click on *Apply* and you should see the following screen.
 
 ![](/images/dash-azure/configured-web-app.png)
 
-Now all we need to do is click *Create* at the bottom of the screen below. Azure will validate your selections, then start the deployment. You should see a deployment notification on the right hand side of your screen. Once you get the notification that it is complete we can navigate and see if it works.
+Now, all we need to do is click *Create* at the bottom of the screen below. Azure will validate your selections, then start the deployment. You should see a deployment notification on the right-hand side of your screen. Once you get the notification that it is complete we can navigate and see if it works.
 
 As before, we already know the URL that was created, in this example it was [http://dash-azure.azurewebsites.net](http://dash-azure.azurewebsites.net).
 
