@@ -12,7 +12,7 @@ Tags:
 
 [Terraform](https://www.terraform.io) is a great tool, occasionally you will run into instances where what you are trying to do isn't supported yet by the Azure provider. When a feature isn't supported you can always fall back to using the [PowerShell module](https://docs.microsoft.com/en-us/powershell/azure/overview?view=azurermps-6.13.0) or the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) as I outlined in this [post](https://www.phillipsj.net/posts/how-to-handle-unsupported-azure-features-in-terraform). There are times that those options don't really do what you are needed. When those cases arise, don't forget that Terraform does have the [Azure ARM Template Resource](https://www.terraform.io/docs/providers/azurerm/r/template_deployment.html) that can be used to execute an [ARM template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authoring-templates) that can do what you need. Using the template itself isn't as bad if you are used to using or types of templates in Terraform. Here are a few tips and tricks that can help you have more success. All the code can be found in this [repo](https://github.com/BlueGhostLabs/terraform-azure-samples) that I will be updating with more examples and modules as I have the time. The code of interest in that repo is located in the *tf-arm* directory in the examples directory. Okay, let's get started.
 
-# Create main.tf
+## Create a main.tf
 
 The first thing we need to do is create our *main.tf*.
 
