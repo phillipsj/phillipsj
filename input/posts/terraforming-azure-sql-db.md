@@ -486,7 +486,7 @@ As you can see we are passing five parameters in and leaving out some of our def
 
 ### All the changes together
 
-Here is what the template should look like with all the changes. You can also look at it on Github [here]().
+Here is what the template should look like with all the changes. You can also look at it on Github [here](https://github.com/BlueGhostLabs/terraform-azure-samples/tree/master/examples/tf-sqldb-advanced).
 
 ```HCL
 provider "azurerm" {
