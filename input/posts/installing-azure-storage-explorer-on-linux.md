@@ -2,6 +2,11 @@
 Title: "Installing Azure Storage Explorer on Linux"
 Published: 09/24/2018 16:19:29
 Tags: 
+- Azure
+- Linux
+- Open Source
+- Tools
+- Microsoft and Linux
 ---
 # Installing Azure Storage Explorer on Linux
 
