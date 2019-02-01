@@ -27,4 +27,4 @@ Thanks for reading,
 
 Jamie
 
-**If you enjoy the content then consider [buying me a coffee](buymeacoff.ee/aQPnJ73O8).**
+**If you enjoy the content then consider [buying me a coffee](https://www.buymeacoffee.com/aQPnJ73O8).**
