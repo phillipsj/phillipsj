@@ -30,5 +30,12 @@ Published: $(Get-Date)
 Tags: ${tagText}
 ---
 # ${Title}
+
+
+Thanks for reading, 
+
+Jamie
+
+**If you enjoy the content then consider [buying me a coffee](https://www.buymeacoffee.com/aQPnJ73O8).**
 "@
 Set-Content -Path $name -Value $content
