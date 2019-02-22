@@ -30,7 +30,7 @@ Here are the presentations that I have given. Links to the presentation and the 
 ## Up For Grabs: Contributing to Open Source Projects
 * 2017 Code PaLOUsa
 * 2015 CodeStock
-<iframe src="http://www.slideshare.net/JamiePhillips15/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+<iframe src="//www.slideshare.net/JamiePhillips15/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 
 ## Profiling Python
 * 2014 Esri Developer Summit
