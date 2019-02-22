@@ -43,7 +43,7 @@ resource "azurerm_subnet" "terraform_tips" {
   name                 = "mydbapp"
   resource_group_name  = "${azurerm_resource_group.terraform_tips.name}"
   virtual_network_name = "${azurerm_virtual_network.terraform_tips.name}"
-  address_prefix       = "10.1.20.0/24"
+  address_prefix       = "10.1.0.0/24"
   service_endpoints    = ["Microsoft.Sql"]
 }
 ```
@@ -70,6 +70,7 @@ variable "sql_password" {
     type = "string"
     description = "Azure SQL Server Password"
 }
+
 resource "azurerm_sql_server" "terraform_tips" {
   name                         = "MySqlDB"
   administrator_login_password = "${var.sql_password}"
@@ -90,9 +91,6 @@ data "azurerm_key_vault_secret" "sql_password" {
   vault_uri = "https://terraformtips.vault.azure.net/"
 }
 
-output "secret_value" {
-  value = "${data.azurerm_key_vault_secret.test.value}"
-}
 resource "azurerm_sql_server" "terraform_tips" {
   name                         = "MySqlDB"
   administrator_login_password = "${data.azurerm_key_vault_secret.sql_password.value}"
@@ -116,9 +114,7 @@ resource "azurerm_app_service" "terraform_tips" {
   connection_string {
     name  = "Database"
     type  = "SQLServer"
-    value = "Server=tcp:${azurerm_sql_server.terraform_tips.fully_qualified_domain_name Database=${azurerm_sql_database.terraform_tips.name};
-User ID=${var.username};Password=${var.password};Trusted_Connection=False;
-Encrypt=True;"
+    value = "Server=tcp:${azurerm_sql_server.terraform_tips.fully_qualified_domain_name Database=${azurerm_sql_database.terraform_tips.name};User ID=${var.username};Password=${var.password};Trusted_Connection=False;Encrypt=True;"
   }
 }
 ```
