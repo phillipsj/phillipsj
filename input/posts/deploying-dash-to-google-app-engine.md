@@ -33,18 +33,18 @@ Now let's create a folder and the initial files that we will need.
 $ mkdir dash-gcp && cd .
 ```
 
-Now let's make the two files that are necessary to get a basic Dash app up and running.
+Now let's make the two files that are necessary to get an essential Dash app up and running.
 
 ```Bash
 $ touch app.yaml
 $ touch main.py
 ```
 
-We call our Python file *main* because the default behavior of Google App Engine is to assume that your entrypoint is located in a file called *main.py*. To learn more about the convention over configuration read the *Application Startup* section [here](https://cloud.google.com/appengine/docs/standard/python3/runtime). That is it! We will only need these two files to get it working.
+We call our Python file *main* because the default behavior of Google App Engine is to assume that your entrypoint is located in a file named *main.py*. To learn more about the convention over configuration read the *Application Startup* section [here](https://cloud.google.com/appengine/docs/standard/python3/runtime). That is it! We will only need these two files to get it working.
 
 ## Step 3: Install Dash packages and freeze
 
-Now we just need to install our dependencies.
+Now we need to install our dependencies.
 
 ```Bash
 $ pip install dash==0.36.0
@@ -54,7 +54,7 @@ $ pip install dash-table==3.1.11
 $ pip install dash-daq==0.1.0
 ```
 
-Now that those are installed, let's create our **requirements.txt** file.
+Now that those are installed let's create our **requirements.txt** file.
 
 ```Bash
 $ pip freeze > requirements.txt
@@ -66,7 +66,7 @@ $ pip freeze > requirements.txt
 
 ## Step 4: Build your Dash app
 
-Now I am not going to be original here and we are going to use the example application found in the Dash tutorial, with some slight modifications to the message.
+Now I am not going to be original here, and we are going to use the example application found in the Dash tutorial, with some slight modifications to the message.
 
 Open your **main.py** and add the following.
 
@@ -109,9 +109,9 @@ Save your changes and let's run it and see what we built. Run using the followin
 $ python main.py
 ```
 
-Navigate to [http://localhost:8050](http://localhost:8050) and you should see your Dash App.
+Navigate to [http://localhost:8050](http://localhost:8050), and you should see your Dash App.
 
-## Step 6: Configure your app.yaml
+## Step 5: Configure your app.yaml
 
 Let's open the *app.yaml* in your favorite text editor and add the following.
 
@@ -121,7 +121,7 @@ runtime: python37
 
 That's it since we are relying on the conventions. Now we are ready to deploy start our deploy to Google App Engine.
 
-## Step 7: Publishing to Google App Engine
+## Step 6: Publishing to Google App Engine
 
 Now I assume you have the Google Cloud SDK tools installed. If you don't, follow the instructions for your OS located [here](https://cloud.google.com/sdk/docs/).
 
@@ -178,9 +178,9 @@ Updating service [default]...failed.
 ERROR: (gcloud.app.deploy) Error Response: [7] Access Not Configured. Cloud Build has not been used in project dash-gcp before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=dash-gcp then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
 ```
 
-Oh no, we got an error. If you see the error, follow the link above and you will be taken directly to the screen to enable the setting. You get up to 120 build minutes daily for free if using the n1-standard-1 machine type, so you don't have to worry about the cost.
+Oh no, we got an error. If you see the error, follow the link above, and you will be taken directly to the screen to enable the setting. You get up to 120 build minutes daily for free if using the n1-standard-1 machine type, so you don't have to worry about the cost.
 
-Now let's run our command again.
+Now let's rerun our command.
 
 ```Bash
 $ gcloud app deploy
@@ -214,7 +214,7 @@ To view your application in the web browser run:
   $ gcloud app browse
 ```
 
-Hopefully at this point you have a succesful deployment, now we can run the command to browse our app and see it running in GCP.
+Hopefully, at this point, you have a successful deployment, now we can run the command to browse our app and see it running in GCP.
 
 ```Bash
 $ gcloud app browse
@@ -224,7 +224,7 @@ $ gcloud app browse
 
 ## Guide Completed
 
-I hope you found this helpful and informative. This is a basic example  and there is a lot of customization that can be configured with the *app.yaml*. As always, don't hesitate to reach out to me on social media or Github.
+I hope you found this helpful and informative. This is a basic example, and there is a lot of customization that can be configured with the *app.yaml*. As always, don't hesitate to reach out to me on social media or Github.
 
 Thanks for reading,
 
