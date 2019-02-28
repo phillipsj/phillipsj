@@ -149,9 +149,9 @@ $file = Read-Host -Prompt "Hey what's the File/Directory name (using the absolut
 
 Great, let's see how that works by executing it.
 
-```
+```Bash
 $ ./Test-File.ps1
-Hey what's the File/Directory name (using the absolute path)?: 
+Hey what's the File/Directory name (using the absolute path)?:
 ```
 
 Okay that is a good start, let's handle the first case of making sure that the file exists. PowerShell provides the *Test-Path* function that will test if a file exists..
@@ -176,7 +176,7 @@ This is nice and easy, not much here as PowerShell makes checking if the file ex
 
 $file = Read-Host -Prompt "Hey what's the File/Directory name (using the absolute path)?"
 
-if($file && Test-Path $file){
+if($file -and (Test-Path $file){
     # Hanlde all the cases.
 }
 else {
@@ -203,7 +203,7 @@ Now we can get to the main part of the application. PowerShell has a robust Obje
 
 $file = Read-Host -Prompt "Hey what's the File/Directory name (using the absolute path)?"
 
-if($file && Test-Path $file){
+if($file -and (Test-Path $file){
     if(!$item.PSisContainer){
         Write-Host "$FILE is a regular file."
     }
@@ -221,7 +221,7 @@ Now run the command and pass a file name, you should see that it is a regular fi
 
 $file = Read-Host -Prompt "Hey what's the File/Directory name (using the absolute path)?"
 
-if($file && Test-Path $file){
+if($file -and (Test-Path $file){
     if(!$item.PSisContainer){
         Write-Host "$FILE is a regular file."
     }
@@ -242,7 +242,7 @@ Feel free to test it out. Now we want to check various properties if it is a fil
 
 $file = Read-Host -Prompt "Hey what's the File/Directory name (using the absolute path)?"
 
-if($file && Test-Path $file){
+if($file -and (Test-Path $file){
     $item = Get-Item $file
 
     if(!$item.PSisContainer){
@@ -259,7 +259,7 @@ if($file && Test-Path $file){
     if(!$item.IsReadOnly) {
         Write-Host "$FILE is writable."
     }
-    
+
     if(-not ($item.Attributes | Where-Object { $_ -ne "Hidden"})){
         Write-Host "$File is searchable."
     }
