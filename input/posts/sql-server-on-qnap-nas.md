@@ -8,9 +8,9 @@ Tags:
 ---
 # SQL Server on QNAP NAS
 
-I run an Intel NUC model NUC7PJYH as my desktop development environment using some Linux distro as my OS. I have been doing some tinkering using SQL Server on Linux, and by the time I spin up docker and the SQL Server container, it starts taking up some resources on my little NUC that I just don't want to give up. I have a QNAP NAS sitting next to me that has an Intel processor and can run QNAP Container Station. I don't use that NAS for much other than photos and some backups, so I am going to put it to handle running a SQL Server on Linux container. Here is how I accomplished getting it to run.
+I run an Intel NUC model NUC7PJYH as my desktop development environment using some Linux distro as my OS. I have been doing some tinkering using SQL Server on Linux, and by the time I spin up docker and the SQL Server container, it starts taking up some resources on my little NUC that I just don't want to give up. I have a QNAP NAS sitting next to me that has an Intel processor and can run QNAP Container Station. I don't use that NAS for much other than photos and some backups, so I am going to put it to work running a SQL Server on Linux container. Here is how I accomplished getting it to run.
 
-Login into your QNAP and start-up Container Station by clicking on the icon. If you don't have it installed you launch the App Center and search for it.
+Login into your QNAP and start-up Container Station by clicking on the icon. If you don't have it installed you can launch the App Center and search for it.
 
 ![](/images/mssql-linux/container-station.png)
 
