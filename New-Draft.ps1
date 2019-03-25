@@ -31,8 +31,7 @@ Tags: ${tagText}
 ---
 # ${Title}
 
-
-Thanks for reading, 
+Thanks for reading,
 
 Jamie
 
