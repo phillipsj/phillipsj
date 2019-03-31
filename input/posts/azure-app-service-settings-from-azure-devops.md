@@ -100,5 +100,3 @@ That's it, and this is just a quick overview of the different ways to configure 
 Thanks for reading,
 
 Jamie
-
-**If you enjoy the content then consider [buying me a coffee](https://www.buymeacoffee.com/aQPnJ73O8).**

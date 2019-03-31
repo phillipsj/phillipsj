@@ -229,5 +229,3 @@ I hope you found this helpful and informative. This is a basic example, and ther
 Thanks for reading,
 
 Jamie
-
-**If you enjoy the content then consider [buying me a coffee](https://www.buymeacoffee.com/aQPnJ73O8).**

@@ -42,5 +42,3 @@ These are all my quick tips for getting started with Azure AD auth and Azure SQL
 Thanks for reading,
 
 Jamie
-
-**If you enjoy the content then consider [buying me a coffee](https://www.buymeacoffee.com/aQPnJ73O8).**

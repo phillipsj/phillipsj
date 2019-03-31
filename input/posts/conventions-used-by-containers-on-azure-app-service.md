@@ -69,5 +69,3 @@ This is just a quick list of items that I found interesting while learning more 
 Thanks for reading,
 
 Jamie
-
-**If you enjoy the content then consider [buying me a coffee](https://www.buymeacoffee.com/aQPnJ73O8).**

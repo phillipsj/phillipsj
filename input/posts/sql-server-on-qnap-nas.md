@@ -73,5 +73,3 @@ I have a few more interesting uses to maximize the use of this NAS.
 Thanks for reading,
 
 Jamie
-
-**If you enjoy the content then consider [buying me a coffee](https://www.buymeacoffee.com/aQPnJ73O8).**
