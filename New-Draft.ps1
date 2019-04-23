@@ -34,3 +34,5 @@ Tags: ${tagText}
 Thanks for reading,
 
 Jamie
+"@
+Set-Content -Path $name -Value $content
