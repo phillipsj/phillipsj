@@ -1,4 +1,4 @@
-#! /snap/bin/pwsh
+#! /usr/bin/env pwsh
 # Borrowed From https://github.com/wekempf/wekempf.github.io/blob/develop/New-Post.ps1
 param(
     [string]
