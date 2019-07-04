@@ -26,6 +26,10 @@ I posted a poll on Twitter to see what type of examples to provide for infrastru
 
 Based on the language you want to use you will need one of the following installed.
 
+
+https://github.com/lunet-io/markdig/blob/master/src/Markdig.Tests/Specs/CustomContainerSpecs.md
+https://github.com/lunet-io/markdig/blob/master/src/Markdig.Tests/Specs/BootstrapSpecs.md
+
 #### Bash
 
 These scripts require the Azure CLI version >= 2.0.68 and was written using Bash 5, but it should be compatabile with older versions.
