@@ -4,7 +4,7 @@
   "description": "Node packages for my blog.",
   "main": "index.js",
   "dependencies": {
-    "netlify-cli": "^2.5.0"
+    "netlify-cli": "^2.11.23"
   },
   "devDependencies": {},
   "scripts": {
