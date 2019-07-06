@@ -16,19 +16,19 @@ Tags:
 ---
 # An easy Grafana setup using Azure App Service for Linux
 
-[Grafana](https://grafana.com/) is an open source platform for creating dashboards and analyzing time series data. Grafana is written in Go and provides a feature rich paltform for visualizing any time series data from sources like Azure Monitor, Azure Application Insights, OpenTSDB, Prometheus, InfluxDB, and many more. It has a wealth of plugins to provide visualization and source enhancements. Grafan can be purchased through Grafana Cloud or it can be self-hosted.
+[Grafana](https://grafana.com/) is an open source platform for creating dashboards and analyzing time-series data. Grafana is written in Go and provides a feature-rich platform for visualizing any time-series data from sources like Azure Monitor, Azure Application Insights, OpenTSDB, Prometheus, InfluxDB, and many more. It has a wealth of plugins to provide visualization and source enhancements. Grafana can be purchased through Grafana Cloud, or it can be self-hosted.
 
-In this post, we are going to deploy Grafana using the [container](https://hub.docker.com/r/grafana/grafana/) to Azure App Service for Linux. We are going to use Azure Storage for hosting our *var/lib/grafana* folder which is the home for our plugins and [SQLite](https://www.sqlite.org/index.html) database. Finally, we will provide authentication to our Grafana instance using Azure Active Directory. Azure App Service for Linux allows running containers, which explains the first step. Azure App Service also allows mounting of [Azure Storage](https://docs.microsoft.com/en-us/azure/app-service/containers/how-to-serve-content-from-azure-storage), either blob or file, to an Azure App Service, which can then be mapped to a location on your container. The last thing to do is to wire Grafana up to Azure Active Directory, fortunately Grafana provides OAuth support and provides the [documenation](https://grafana.com/docs/auth/generic-oauth/#set-up-oauth2-with-azure-active-directory) for the configuration.
+In this post, we are going to deploy Grafana using the [container](https://hub.docker.com/r/grafana/grafana/) to Azure App Service for Linux. We are going to use Azure Storage for hosting our *var/lib/grafana* folder which is the home for our plugins and [SQLite](https://www.sqlite.org/index.html) database. Finally, we will provide authentication to our Grafana instance using Azure Active Directory. Azure App Service for Linux allows running containers, which explains the first step. Azure App Service also allows mounting of [Azure Storage](https://docs.microsoft.com/en-us/azure/app-service/containers/how-to-serve-content-from-azure-storage), either blob or file, to an Azure App Service, which you can map to a location on your container. The last thing to do is to wire Grafana up to Azure Active Directory. Fortunately, Grafana provides OAuth support and provides the [documenation](https://grafana.com/docs/auth/generic-oauth/#set-up-oauth2-with-azure-active-directory) for the configuration.
 
-I posted a poll on Twitter to see what type of examples to provide for infrastructure as code. It seems that providing an PowerShell, Bash, and Terraform example was desired to I have included all three. I have a repository in the [BlueGhost Labs](https://github.com/BlueGhostLabs) organization GitHub called [grafana-container-on-azure](https://github.com/BlueGhostLabs/grafana-container-on-azure) that has all the code organized by langauge. Scripts for both creation and cleanup exist. Below is a walkthrough of what all of these scripts are doing if you want to take a deeper dive.
+I posted a poll on Twitter to see what type of examples to provide for infrastructure as code. An example in PowerShell, Bash, and Terraform was requested, so I have included all three. I have a repository in the [BlueGhost Labs](https://github.com/BlueGhostLabs) organization GitHub called [grafana-container-on-azure](https://github.com/BlueGhostLabs/grafana-container-on-azure) that has all the code organized by language. Scripts for both creation and cleanup exist. Below is a walkthrough of what all of these scripts are doing if you want to take a deeper dive.
 
 ## Getting Started
 
-Based on the language you want to use you will need one of the following installed.
+Based on the language you want to use, you will need one of the following installed.
 
 #### Bash
 
-These scripts require the Azure CLI version >= 2.0.68 and was written using Bash 5, but it should be compatabile with older versions.
+These scripts require the Azure CLI version >= 2.0.68 and were written using Bash 5, but it should be compatible with older versions.
 
 #### PowerShell
 
@@ -36,13 +36,13 @@ These scripts require PowerShell Core version >= 6.2.1 and was written using the
 
 #### Terraform
 
-These scripts require Terraform verson 0.12. It uses the AzureRM, AzureAD, and Random providers.
+These scripts require Terraform version 0.12. It uses AzureRM, AzureAD, and Random providers.
 
-Once you have picked the environment and have gotten everything configured we can get started creating our scripts. If you need any assistance with installation or run into any issues reach out on GitHub, Twitter, or LinkedIn using the links to the right of this post.
+Once you have picked the environment and have gotten everything configured, we can get started creating our scripts. If you need any assistance with installation or run into any issues, reach out on GitHub, Twitter, or LinkedIn using the links to the right of this post.
 
 ## Initial Configuration
 
-We need to set some initial variables, I would urge you to change these to avoid naming conflicts in resources like the App Service.
+We need to set some initial variables. I would urge you to change these to avoid naming conflicts in resources like the App Service.
 
 #### Bash
 
@@ -132,7 +132,7 @@ resource "random_string" "grafana_password" {
 
 ## Creating our Resource Group
 
-Now lets create our resource group.
+Now let's create our resource group.
 
 #### Bash
 
@@ -286,7 +286,7 @@ resource "azurerm_app_service_plan" "main" {
 
 ## Bash and PowerShell: Create the App Service
 
-This is where the instructions start deviating a little as Terraform can figure out depedencies and it also allows you to configure the App Service with the creation where as the scripting tools do not.
+This step is where the instructions start deviating a little as Terraform can figure out dependencies and it also allows you to configure the App Service with the creation whereas the scripting tools do not.
 
 #### Bash
 
@@ -315,7 +315,7 @@ $webApp = New-AzWebApp @AppServiceParams
 
 ## Bash and PowerShell: Mount the Storage Account to the App Service
 
-Again, this differs from the Terraform. This will mount the Blob storage to the App Service.
+Again, this differs from the Terraform. This command will mount the Blob storage to the App Service.
 
 #### Bash
 
@@ -407,7 +407,7 @@ resource "azuread_application_password" "main" {
 
 ## Terraform: Create the App Service with configuration
 
-Now we have all the pieces, we can build out our App Service in Terraform. This isn't support for mountin the blob storage to the App Service, so we will be using a *local-exec* provisioner to run the Azure CLI command.
+Now we have all the pieces. We can build out our App Service in Terraform. This resource doesn't support for mounting the blob storage to the App Service, so we will be using a *local-exec* provisioner to run the Azure CLI command.
 
 #### Terraform
 
@@ -517,7 +517,7 @@ Set-AzWebApp @AppConfig
 # Printing out information you will need to know
 echo Grafana password is: $gf_password
 echo Grafana address is: https://$hostname
-echo Client Scecret is: $client_secret
+echo Client Secret is: $client_secret
 ```
 
 #### PowerShell
@@ -526,12 +526,12 @@ echo Client Scecret is: $client_secret
 # Printing out information you will need to know
 Write-Host Grafana password is: $grafanaPassword
 Write-Host Grafana address is: https://$($webApp.DefaultHostName)
-Write-Host Client Scecret is: $clientSecret
+Write-Host Client Secret is: $clientSecret
 ```
 
 #### Terraform
 
-These are typically placeed in a file called *output.tf*.
+Place these in a file called *output.tf*.
 
 ```HCL
 output "grafana_password" {
@@ -573,9 +573,9 @@ $ terraform apply
 
 ## Conclusion
 
-After the method you chose has finished, you should be able to use the URL output from the execution to navigate to a running Grafan instance. You will be able to login as the admin or you can login using an Azure Active Directory account. The Azure AD login will have read-only permissions by default so you will need to log into your Grafan instance as admin to change that. If you navigate to your create Azure Storage container you will see a SQLite database, a plugins folders, and a few other files. A cool thing about this approach is the versioning built into Azure Storage so if you make a mistake you can revert your SQLite database. As far as performance is concerned, I think the site is fast and the database is responding quickly, which is kind of amazing, in my opinion to be running from blob storage.
+After the method you chose has finished, you should be able to use the URL output from the execution to navigate to a running Grafan instance. You will be able to login as the admin or you can login using an Azure Active Directory account. The Azure AD login will have read-only permissions by default so you will need to log into your Grafan instance as admin to change that. If you navigate to your created Azure Storage container, you will see an SQLite database, plugins folders, and a few other files. A cool thing about this approach is the versioning built into Azure Storage, so if you make a mistake, you can revert your SQLite database. As far as performance is concerned, I think the site is fast and the database is responding quickly, which is impressive, in my opinion, to be running from blob storage. The last point that I find interesting is that all three of these solutions have an almost identical line count.
 
-Let me know if you have any questions and I will try to assist you as I can.
+Let me know if you have any questions, and I will try to assist you as I can.
 
 Thanks for reading,
 
