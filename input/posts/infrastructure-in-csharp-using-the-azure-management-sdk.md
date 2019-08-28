@@ -75,11 +75,16 @@ Let's call one of the targets to make sure that it executes as expected.
 
 ```Bash
 $ dotnet run -- create
-Bullseye: Starting... (create)                                                                                                              Bullseye/create: Starting...
+Bullseye: Starting... (create)
+Bullseye/create: Starting...
 Called create.
-Bullseye/create: Succeeded. (7.94 ms)                                                                                                       Bullseye: ───────────────────────────────
+Bullseye/create: Succeeded. (7.94 ms)
+Bullseye: ───────────────────────────────
 Bullseye: Duration      Outcome    Target
-Bullseye: ────────────  ─────────  ──────                                                                                                   Bullseye: 8 ms  100.0%  Succeeded  create                                                                                                   Bullseye: ───────────────────────────────                                                                                                   Bullseye: Succeeded. (create) (26.6 ms)
+Bullseye: ────────────  ─────────  ──────
+Bullseye: 8 ms  100.0%  Succeeded  create
+Bullseye: ───────────────────────────────
+Bullseye: Succeeded. (create) (26.6 ms)
 ```
 
 It looks like it is working, now we can start filling in our functionality. Let's start by creating our infrastructure. We are going to begin by handling creating our Azure connection. This section is quick and dirty isn't the proper way to handle your credentials. We will create our credentials, then use the Azure configure method to build out our Azure connection to our default subscription.
@@ -149,11 +154,15 @@ Make sure to update the credentials and let's execute our create.
 
 ```Bash
 $ dotnet run -- create
-Bullseye: Starting... (create)                                                                                                              Bullseye/create: Starting...
+Bullseye: Starting... (create)
+Bullseye/create: Starting...
 Bullseye/create: Succeeded. (26.5 s)
 Bullseye: ──────────────────────────────────
 Bullseye: Duration         Outcome    Target
-Bullseye: ───────────────  ─────────  ──────                                                                                                Bullseye: 26.48 s  100.0%  Succeeded  create                                                                                                Bullseye: ──────────────────────────────────                                                                                                Bullseye: Succeeded. (create) (26.5 s)
+Bullseye: ───────────────  ─────────  ──────
+Bullseye: 26.48 s  100.0%  Succeeded  create
+Bullseye: ──────────────────────────────────
+Bullseye: Succeeded. (create) (26.5 s)
 ```
 
 Hmm, that took longer. Let's go to the portal and see if we can see our infrastructure.
@@ -164,11 +173,14 @@ Yay! We created an infrastructure using C#. Now let's test our destroy.
 
 ```Bash
 $ dotnet run -- destroy
-Bullseye: Starting... (destroy)                                                                                                             Bullseye/destroy: Starting...
+Bullseye: Starting... (destroy)
+Bullseye/destroy: Starting...
 Bullseye/destroy: Succeeded. (2 min 48 s)
 Bullseye: ──────────────────────────────────────
 Bullseye: Duration            Outcome    Target
-Bullseye: ──────────────────  ─────────  ───────                                                                                            Bullseye: 2 min 48 s  100.0%  Succeeded  destroy                                                                                            Bullseye: ──────────────────────────────────────                                                                                            Bullseye: Succeeded. (destroy) (2 min 48 s)  
+Bullseye: ──────────────────  ─────────  ───────
+Bullseye: 2 min 48 s  100.0%  Succeeded  destroy                                                                                            Bullseye: ──────────────────────────────────────
+Bullseye: Succeeded. (destroy) (2 min 48 s)
 ```
 
 If you check in the portal, the resources will no longer be there. We have one step left, and that is to create a package and deploy it to Azure. Let's look at our whole infrastructure as code.
