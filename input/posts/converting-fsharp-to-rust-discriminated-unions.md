@@ -5,7 +5,7 @@ Tags:
 - Rust
 - Rustacean
 - Open Source
-- F#
+- FSharp
 - .NET
 ---
 # Converting F# to Rust: Discriminated Unions
