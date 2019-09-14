@@ -1,0 +1,12 @@
+---
+Title: "DevOps a fad?"
+date: 2017-05-02T20:55:38
+Tags: 
+---
+# DevOps a fad?
+
+It may not be as evident with from most of my posts, but I have a huge proponent of DevOps. What I am a proponent for is the culture and practices, not any tools or methodologies. Needless to say, I was taken back from a co-worker who confidently declared DevOps as a fad. Tooling and methodology are truly just here for a season, but good solid team culture and practices promote a healthy ecosystem to deliver reliable services and software. There is nothing fad about it, it has been something that great teams or as some would say, "High Performing IT" have and continue to do. DevOps is a term that gives a broad sweeping term to encompass it all, to some that means tooling, others it means some methodology. I think that IT has reached the point that if you are not using orchestration and configuration management along with source control to manage it all you are having a hard time keeping pace with the demands of lower costs and faster turn around. Tooling like SaltStack, Chef, Puppet, Habitat, etc. all help to solve that solution, but without good team culture and practices, those tools can be misused and not provide the benefit that "DevOps" promises. If configuration isn't documented and tracked then your change management isn't managed, if orchestration isn't used then that change isn't consistently applied, if all of these items are not source controlled with controlled releases then all bets are off. In my experience, change management is a make or break part of the process. If you don't know all your recent changes when an incident occurs, then you don't have a place to start with your resolution. Source control is the running record of those changes which happens to record timestamp and the person making the change. If configuration can only come from source control to your orchestration tool, then the path to getting to production is closely guarded. This means with some confidence, what is in source control is exactly what is in production, now troubleshooting just got easier. I think many would not consider this a fad, just how it is done. I know from personal experience that once those pieces are in place, you don't ask if anyone changed production. You look in source control, build server, and orchestration tool to see what was changed without any guess work. Simple as that.
+
+Thanks for reading,
+
+Jamie
