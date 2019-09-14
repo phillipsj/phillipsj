@@ -1,0 +1,17 @@
+[build]
+publish = "public"
+command = "hugo --gc --minify"
+
+[context.production.environment]
+HUGO_VERSION = "0.58"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+
+[[headers]]
+  for = "rss.*"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=UTF-8"
+[[headers]]
+  for = "*.rss"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=UTF-8"

@@ -1,0 +1,14 @@
+# About Widget config
+[about]
+title = " "                            # default: .Site.Title
+description = ""
+logo = "/images/logo.jpg"             # default: "/images/logo.png"
+
+# Recent Posts Widget config
+[recent_posts]
+title = ""                            # default: "Recent Posts"
+length = 8                           # default: 5
+excludeTypes = ["page"]               # default: ["page"]
+
+[sidebar_menu]
+mirror = "main"

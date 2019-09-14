@@ -1,0 +1,43 @@
+{
+  "name": "minimo",
+  "description": "Minimalist theme for Hugo",
+  "version": "2.8.0",
+  "author": {
+    "name": "Munif Tanjim",
+    "url": "https://muniftanjim.com"
+  },
+  "repository": "MunifTanjim/minimo",
+  "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "start": "hugo server --source=exampleSite --themesDir=../.. --disableFastRender",
+    "watch": "webpack --watch --progress --colors"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "assets-webpack-plugin": "^3.9.10",
+    "autoprefixer": "^9.6.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^2.1.1",
+    "cssnano": "^4.1.10",
+    "eslint": "^5.16.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "algoliasearch": "^3.29.0",
+    "es6-docready": "^1.0.0",
+    "fuse.js": "^3.2.1",
+    "lunr": "^2.3.0",
+    "normalize.css": "^8.0.0",
+    "twemoji": "^2.5.1"
+  }
+}

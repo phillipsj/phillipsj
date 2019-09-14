@@ -1,0 +1,93 @@
+baseURL = "https://phillipsj.net"
+title = "Jamie Phillips"
+languageCode = "en-us"
+copyright = ""
+
+theme = "minimo"
+
+googleAnalytics = ""
+
+Paginate = 5
+preserveTaxonomyNames = true
+
+enableRobotsTXT = true # generate robots.txt
+
+# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
+pygmentsCodefences = true
+pygmentsStyle = "tango"
+
+enableEmoji = true
+
+# Missing translations will default to this content language
+defaultContentLanguage = "en"
+
+[params.copyright]
+prefix = "Copyright"
+holder = "by Jamie Phillips."
+startYear = "2014"
+suffix = "The opinions expressed herein are my own and do not represent those of my employer or any other third-party views in any way. This work is licensed under a Creative Commons Attribution 4.0 International License."
+
+[params.settings]
+# date & time format: https://golang.org/pkg/time/
+dateFormat = "2006-01-02"
+listDateFormat = "2006-01-02"
+archiveDateFormat = "2006-01-02"
+hideEntryNavigation = ["page"] # boolean / array of sections
+hideEntryMeta = ["page"] # boolean / array of sections
+showReadingTime = true
+showLastmod = true
+taxonomyCloudShuffle = true
+accentColor = "#ffcd00"
+hideMainMenu = true
+rtl = false
+
+[params.sidebar]
+enable = true
+
+[params.widgets]
+homepage = ["recent_posts"]
+sidebar = ["about", "sidebar_menu"]
+footer = ["social_menu"]
+
+[params.seo]
+# Title Separator: - – — · • * ⋆ | ~ « » < >
+titleSeparator = "•"
+
+[params.social]
+github = "phillipsj"
+linkedin = "jamie-phillips-695927b0"
+twitter = "phillipsj73"
+youtube = "UCKGt52ca8BvLTgDP5KIKzCA"
+
+[params.comments]
+enable = false
+
+[taxonomies]
+author = "authors"
+category = "categories"
+series = "series"
+tag = "tags"
+
+[permalinks]
+page = "/:slug/"
+
+[[menu.main]]
+name = "Buy me a coffee"
+url = "https://www.buymeacoffee.com/aQPnJ73O8"
+weight = -205
+
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = -180
+
+
+[blackfriday]
+hrefTargetBlank = true
+
+[languages]
+# edit this block for your own language
+[languages.en]
+lang = "en"
+languageName = "English"
+weight = 1
