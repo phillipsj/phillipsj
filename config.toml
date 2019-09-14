@@ -5,7 +5,7 @@ copyright = ""
 
 theme = "minimo"
 
-googleAnalytics = ""
+googleAnalytics = "UA-56743201-1"
 
 Paginate = 5
 preserveTaxonomyNames = true
