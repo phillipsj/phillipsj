@@ -15,3 +15,13 @@ HUGO_ENABLEGITINFO = "true"
   for = "*.rss"
   [headers.values]
     Content-Type = "application/rss+xml; charset=UTF-8"
+
+[[redirects]]
+  from = "/feed.rss"
+  to = "/posts/index.xml"
+  status = 200
+
+[[redirects]]
+  from = "/atom.rss"
+  to = "/posts/index.xml"
+  status = 200
