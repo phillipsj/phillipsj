@@ -14,3 +14,4 @@ packages\.xml
 *.hash
 
 config.wyam.packages.xml
+.idea
