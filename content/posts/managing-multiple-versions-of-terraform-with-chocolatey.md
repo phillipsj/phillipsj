@@ -39,9 +39,7 @@ $ New-Item -Name .terraform-version -ItemType file
 Now we can open it and add the following.
 
 ```
-terraform {
-    required_version = "=0.11.14"
-}
+0.11.14
 ```
 
 Great, we have the version we want to use defined. Now we need to open our PowerShell profile since that is what I am using. We are going to add a function that checks for the **.terraform-version** file, if it exists, it will set an alias called **tf** to point to the correct version.
