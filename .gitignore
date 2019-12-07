@@ -15,3 +15,6 @@ packages\.xml
 
 config.wyam.packages.xml
 .idea
+
+# Hugo
+/public
