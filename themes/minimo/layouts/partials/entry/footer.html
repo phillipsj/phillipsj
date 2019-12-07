@@ -1,5 +1,5 @@
 {{ if not ( eq .Section "page" ) }}
-<footer class='entry-footer'>  
+<footer class='entry-footer'>
   <div class='container sep-before'>
   {{- if and ( eq .Site.Params.settings.showLastmod true ) ( not ( eq .Lastmod .Date ) ) -}}
     {{- $dateFormat := ( .Site.Params.settings.dateFormat | default "2006, Jan 02" ) -}}
