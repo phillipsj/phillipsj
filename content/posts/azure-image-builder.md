@@ -1,7 +1,6 @@
 ---
 title: "Azure Image Builder"
-date: 2019-12-16T20:44:41-05:00
-draft: true
+date: 2019-12-20T16:40:41-05:00
 tags:
 - Azure
 - Cloud
