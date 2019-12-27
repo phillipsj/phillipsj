@@ -30,7 +30,7 @@ Yep, I used Vim during the exam. I have practiced using Vim over the years, and 
 $ vim tutor
 ```
 
-Run through it until you are comfortable with the basics. I made heavy used of *dd*, *r*, and *dw*. It was just quicker than doing all those deletes. I would also suggest creating a *.vimrc* file that has your tabs set to two and expanded.
+Run through it until you are comfortable with the basics. I made heavy use of *dd*, *r*, and *dw*. It was just quicker than doing all those deletes manually. I would also suggest creating a *.vimrc* file that has your tabs set to two and expanded.
 
 ```bash
 set tabstop=2
