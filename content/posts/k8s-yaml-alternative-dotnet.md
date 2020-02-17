@@ -4,7 +4,8 @@ date: 2020-02-15T21:39:36-05:00
 tags:
 - YAML
 - k8s
-- Kubernetes 
+- Kubernetes
+- .NET
 ---
 
 In a previous [post](https://www.phillipsj.net/posts/k8s-yaml-alternative-json/) I showed how to use JSON instead of YAML. This post is going to show another alternative using .NET. This example will be displayed using both C# and F#. I will be using the same Kubernetes object to allow comparison.
@@ -47,7 +48,7 @@ $ dotnet new console -o k8scsharp && cd k8scsharp
 $ dotnet add package KubernetesClient
 ```
 
-Now we can connect our client, create our object, and create the object.
+Now we can connect our client, create our object, and deploy the object.
 
 ```csharp
 using System;
@@ -98,7 +99,7 @@ $ dotnet run
 Pod deployed
 ```
 
-Now, if we get all pods, we should see both running.
+Now, if we get all pods, we should see it running.
 
 ```bash
 $ kubectl get pods 
@@ -122,7 +123,7 @@ $ dotnet new console -lang F# -o k8sfsharp && cd k8sfsharp
 $ dotnet add package KubernetesClient
 ```
 
-Now we can connect our client, create our object, and create the object.
+Now we can connect our client, create our object, and deploy the object.
 
 ```fsharp
 open System.Collections.Generic
@@ -159,7 +160,7 @@ $ dotnet run
 Pod deployed
 ```
 
-Now, if we get all pods, we should see both running.
+Now, if we get all pods, we should see it running.
 
 ```bash
 $ kubectl get pods 
