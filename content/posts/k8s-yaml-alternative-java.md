@@ -41,11 +41,7 @@ Now let's take a look at this in Java.
 
 ## Java
 
-This example is going to leverage the [Kubernetes Client](https://www.terraform.io/docs/providers/kubernetes/index.html) for Java. Let's create a basic Java console application.
-
-```bash
-$ 
-```
+This example is going to leverage the [Kubernetes Client](https://www.terraform.io/docs/providers/kubernetes/index.html) for Java. Let's create a basic Java console application, I am using IntelliJ to accomplish this task.
 
 Now we can setup our client, create our object, and execute the Java.
 
