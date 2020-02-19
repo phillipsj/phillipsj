@@ -41,7 +41,7 @@ Now let's take a look at this in Terraform.
 
 ## Terraform
 
-This example is going to leverage the [Kubernetes Provider](https://www.terraform.io/docs/providers/kubernetes/index.html) for Terraform.. Let's create a Terraform file with the provider and the object.
+This example is going to leverage the [Kubernetes Provider](https://www.terraform.io/docs/providers/kubernetes/index.html) for Terraform. Let's create a Terraform file with the provider and the object.
 
 ```bash
 $ mkdir k8stf && cd k8stf && touch main.tf
@@ -95,7 +95,7 @@ $ terraform apply
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
 
-Now, if we get all pods, we should see both running.
+Now, if we get all pods, we should see it running.
 
 ```bash
 $ kubectl get pods 
