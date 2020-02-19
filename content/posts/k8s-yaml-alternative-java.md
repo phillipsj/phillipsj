@@ -1,5 +1,5 @@
 ---
-title: "K8s YAML Alternative: Terraform"
+title: "K8s YAML Alternative: Java"
 date: 2020-02-17T20:39:36-05:00
 tags:
 - YAML
