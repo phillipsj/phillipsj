@@ -27,6 +27,9 @@ holder = "by Jamie Phillips."
 startYear = "2014"
 suffix = "The opinions expressed herein are my own and do not represent those of my employer or any other third-party views in any way. This work is licensed under a Creative Commons Attribution 4.0 International License."
 
+[params.assets]
+customCSS = ["css/custom.css"]
+
 [params.settings]
 # date & time format: https://golang.org/pkg/time/
 dateFormat = "2006-01-02"
