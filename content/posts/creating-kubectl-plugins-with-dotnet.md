@@ -13,7 +13,7 @@ tags:
 
 [Kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) is the CLI tool for working with the [Kubernetes](https://kubernetes.io/) API. [Kubectl plugins](https://kubernetes.io/docs/tasks/extend-kubectl/kubectl-plugins/) provide us a way to extend the Kubectl to include more complex commands or enhanced functionality. There are two requirements for creating a plugin, and the requirements are as follows.
 
-1. Must be named **kubectl-<plugin-name>**.
+1. Must be named **kubectl-name**.
 2. Must be on your path.
 
 I would guess that golang is one of the more popular choices for creating plugins. Any language that can create a single executable binary would be a great choice as it makes it easier to manage and distribute. Depending on the type of plugin you are developing, choosing a language that has a [Kubernetes Client](https://kubernetes.io/docs/reference/using-api/client-libraries/) would be wise too. Traditionally, .NET isn't a language that comes to mind when speaking about producing a single executable binary. As .NET Core has gained momentum, the ability has been introduced with the latest 3.1 release to support creating a single executable binary. In this post I will show you how to use .NET Core 3.1 to create a plugin for Kubectl. Let's get started.
