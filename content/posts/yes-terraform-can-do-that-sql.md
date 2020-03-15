@@ -1,7 +1,6 @@
 ---
 title: "Yes, Terraform can do that: SQL"
 date: 2020-03-14T22:19:04-04:00
-draft: true
 tags:
 - Open Source
 - Terraform
