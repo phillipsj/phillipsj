@@ -15,7 +15,6 @@ provider "docker" {
   host = "tcp://127.0.0.1:2376/"
 }
 
-# Create a container
 resource "docker_container" "tf" {
   image = docker_image.busybox.latest
   name  = "tfdocker"
