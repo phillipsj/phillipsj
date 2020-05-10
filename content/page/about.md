@@ -15,3 +15,4 @@ I have profiles scattered around the web at the following sites:
 * [Buy me a coffee](https://www.buymeacoffee.com/aQPnJ73O8)
 * [LinkedIn](https://www.linkedin.com/in/jamie-phillips-695927b0)
 * [Goodreads (phillipsj)](http://www.goodreads.com/phillipsj)
+* [YouTube Channel](https://www.youtube.com/channel/UCKGt52ca8BvLTgDP5KIKzCA)
