@@ -1,6 +1,6 @@
 ---
 title: "Install PowerShell on Fedora 32"
-date: 2020-05-20T22:30:12-04:00
+date: 2020-05-20T20:30:12-04:00
 Tags:
 - Open Source
 - Microsoft And Linux
