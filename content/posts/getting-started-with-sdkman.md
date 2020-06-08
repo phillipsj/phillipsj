@@ -1,7 +1,6 @@
 ---
 title: "Getting Started With SDKMAN!"
-date: 2020-05-31T14:37:43-04:00
-draft: true
+date: 2020-06-07T21:37:43-04:00
 Tags: 
 - Linux
 - Bash
