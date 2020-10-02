@@ -1,5 +1,0 @@
-{{- $displayMode := ( not ( eq ( .Get 0 ) "inline" ) ) -}}
-
-{{- print ( cond $displayMode "\\[" "\\(" ) }}
-{{ .Inner }}
-{{ print ( cond $displayMode "\\]" "\\)" ) }}
