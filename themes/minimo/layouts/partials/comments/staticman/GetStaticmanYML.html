@@ -1,4 +1,0 @@
-{{ $rawStaticmanYML := ( readFile "staticman.yml" ) }}
-{{ $parsedStaticmanYML := ( transform.Unmarshal $rawStaticmanYML ) }}
-
-{{ return $parsedStaticmanYML }}

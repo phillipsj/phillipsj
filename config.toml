@@ -21,6 +21,10 @@ enableEmoji = true
 # Missing translations will default to this content language
 defaultContentLanguage = "en"
 
+[params.info]
+description = ""
+title404 = "Nothing's here!"
+
 [params.copyright]
 prefix = "Copyright"
 holder = "by Jamie Phillips."
@@ -29,6 +33,7 @@ suffix = "The opinions expressed herein are my own and do not represent those of
 
 [params.assets]
 customCSS = ["css/custom.css"]
+gopher = "gopher.png"
 
 [params.settings]
 # date & time format: https://golang.org/pkg/time/
