@@ -1,0 +1,15 @@
+{{- $txs := ( $.Scratch.Get "taxonomy" ) -}}
+{{- $tx := ( $txs | singularize ) -}}
+
+{{- $taxonomies := ( index $.Site.Taxonomies $txs ) -}}
+
+<div class='{{ $txs }}'>
+  {{- partial "svg/icons" $tx -}}
+  <span class='screen-reader-text'>{{ ( ( i18n $tx 2 ) | default $txs ) }}: </span>
+  {{- range $i, $item := ( $.GetTerms $txs ) -}}
+    {{- if gt $i 0 }}, {{ end -}}
+    <a class='{{ $tx }}' href='{{ $item.RelPermalink }}'>
+      {{- $item.Title -}}
+    </a>
+  {{- end -}}
+</div>
