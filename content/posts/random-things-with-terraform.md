@@ -1,7 +1,6 @@
 ---
 title: "Random things with Terraform"
 date: 2020-10-03T14:18:49-04:00
-draft: true
 tags:
 - Open Source
 - Terraform
