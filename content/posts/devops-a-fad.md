@@ -2,6 +2,8 @@
 Title: "DevOps a fad?"
 date: 2017-05-02T20:55:38
 Tags: 
+- DevOps
+- Opinion
 ---
 # DevOps a fad?
 
