@@ -170,3 +170,49 @@ We now have some basic styling, now we can get back the focus which is our form 
 
 ### Creating the new user form
 
+We are going to replace everything between the *body* tags to make our form. We are going to keep the form simple requiring only the user's name and employee id. There is a lot of HTML that goes itno building forms and that is one of the reasons I am keeping this short.
+
+```HTML
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>User Creation</title>
+        <link rel="stylesheet" type="text/css" href="/bulma.min.css">
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">User Info:</h1>
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Enter the new user's name.">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Employee ID</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Enter the Employee ID.">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link">Submit</button>
+                    </div>
+                </div>
+                </div>
+        </section>
+    </body>
+</html>
+```
+
+Now we should have a page that looks like this.
+
+**form-html.png**
+
+Next we are going to make our submit button work to get our data.
+
+### Submitting the Form
+
