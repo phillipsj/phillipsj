@@ -5,7 +5,6 @@ Tags:
 - Predictions
 - New Year 
 ---
-# 2021 Predictions
 
 2020 was a successful year for me with my predictions. I wasn't into making them, yet I did, and it was a sweeping success. I decided to do it again for 2021, and I will be revisiting a 2019 prediction. Let's dive in.
 
