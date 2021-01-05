@@ -1,7 +1,6 @@
 ---
 title: "openSUSE, Samba, and the Firewall"
-date: 2021-01-03T13:34:59-05:00
-draft: true
+date: 2021-01-04T19:04:59-05:00
 tags:
 - Open Source
 - Linux
