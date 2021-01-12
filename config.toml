@@ -5,9 +5,7 @@ copyright = ""
 
 theme = "minimo"
 
-googleAnalytics = "UA-56743201-1"
-
-Paginate = 5
+Paginate = 10
 preserveTaxonomyNames = true
 
 enableRobotsTXT = true # generate robots.txt
