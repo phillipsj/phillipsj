@@ -60,10 +60,12 @@ footer = ["social_menu"]
 titleSeparator = "•"
 
 [params.social]
-github = "phillipsj"
+gitlab = "phillipsj"
 linkedin = "jamie-phillips-695927b0"
 twitter = "phillipsj73"
 youtube = "UCKGt52ca8BvLTgDP5KIKzCA"
+github = "phillipsj"
+
 
 [params.comments]
 enable = false
