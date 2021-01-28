@@ -6,7 +6,7 @@ tags:
 - Terraform
 - HashiCorp
 - Linux
-- Linode
+- Azure
 - Cloud-Init
 ---
 
