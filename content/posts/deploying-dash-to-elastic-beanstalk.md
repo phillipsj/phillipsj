@@ -115,7 +115,7 @@ $ python3 application.py
 
 Navigate to http://localhost:8080 and you should see the following.
 
-![](/images/dash/dash-running-locally.jpg)
+![](/images/dash/dash-running-locally.png)
 
 ## Step 5: The Dockerfile
 

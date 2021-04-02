@@ -112,7 +112,7 @@ $ python application.py
 
 Navigate to http://localhost:80 and you should see the following.
 
-![](/images/dash-azure/dash-running-locally.jpg)
+![](/images/dash-azure/dash-running-locally.png)
 
 ## Step 6: The Dockerfile
 
