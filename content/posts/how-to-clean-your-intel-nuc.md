@@ -6,6 +6,7 @@ tags:
 - minipc
 - Dev Environment
 - Homelab
+- Gear
 ---
 
 My new job has me relying a lot more on VMs, and I have had to do a little work on my homelab, so I could support running tools like [Proxmox VE](https://www.proxmox.com/en/proxmox-ve) and [Harvester](https://github.com/harvester/harvester). I have been using most of my Intel NUCs for a few years, and I started noticing that they are noisier now. Given the noise, I decided to take them apart, clean out all the dust, then apply some new thermal paste. I recorded a temperature before I cleaned each one and a temperature post-cleaning. The dust removal and new thermal paste dropped temps on average roughly 7 degrees Celsius. That isn't too shabby, and it decreased the overall fan noise. I decided to take some pictures of me cleaning my Intel NUC 8th Gen i5, model [NUC8i5BEK](https://www.intel.com/content/www/us/en/products/sku/126148/intel-nuc-kit-nuc8i5beh/specifications.html). The process is similar for others. Actually, the main difference is the heatsink fan and cooler. The rest is pretty much identical. If you have any questions about doing it, just reach out, and answer any questions. Here is the before temp.
