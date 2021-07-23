@@ -6,6 +6,7 @@ tags:
 - Cloud
 - Rancher
 - Home Lab
+- Harvester
 ---
 
 I have made several attempts at configuring a home lab over the years. I use it for a while, and then it sits there. Since I have started my new job, I have found an increasing need for it. The cloud is super convenient, yet nothing is faster than having servers locally. I have been using [Vagrant](https://www.vagrantup.com/) with success, and I did have a [KVM](https://www.linux-kvm.org/page/Main_Page) setup working. I have decided that I needed something a tad more than what KVM could provide. Given all of that, I decided that I would give [Harvester](https://harvesterhci.io/) a spin, given it's Kubernetes based.
