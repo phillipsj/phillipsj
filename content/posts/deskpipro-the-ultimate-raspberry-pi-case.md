@@ -10,6 +10,25 @@ After doing some research I found the [Argon ONE M2](https://www.argon40.com/arg
 
 ## Packaging
 
-It arrived very well packed and once opened, there was no damage on the box. The packaging is nice with a detail.
+It arrived very well packed and once opened, there was no damage on the box. The packaging is nice with noticable care given.
+
+TODO: Image
+
+Here are the contents once all out of the box.
+
+TODO: Image
+
+## Assembly
+
+Assembly was interesting and a little challenging at times. There are a few different parts that happened to be a little tricky. The first tricky installation was the first step which was assemblying and attaching the heatsink. The heatsink is a little wonky and the installation is the same. Be extra careful with the heat pipes as they seem very flexible. 
+
+TODO: Image
+
+The next tricky step was adding in the extensions board. This board extends the PIs ports and can be difficult to get all the ports to align and slide in. A little bit of patientence and the use of pencil to nudge the ports a little to align them. 
+
+TODO: Image
+
+The last tricky section is getting the M2 SSD drive PCB out. Again, I needed to use a pencil to nudge it loose from the slot. I just used the pencil to push it from the back to get it to dislodge. The M2 SSD PCB is kind of cool since it slots into the regular 2.5 SSD drive slot. After attaching it you can slide it back in. Then it's just time to put it all back together.  
+
 
 
