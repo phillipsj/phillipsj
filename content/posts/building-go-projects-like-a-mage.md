@@ -8,11 +8,11 @@ tags:
 - Build Tools
 ---
 
-Working on cross-platform projects comes with a lot of challenges. Several things about go can make that less difficult, like being able to target a different runtime and how you can create files for other runtimes to substitute platform-specific functions. These are excellent capabilities that I appreciate.
+Working on cross-platform projects comes with a lot of challenges. Several things about Go can make that less difficult, like being able to target a different runtime and how you can create files for other runtimes to substitute platform-specific functions. These are excellent capabilities that I appreciate.
 
-I do find myself with an issue that is when it comes to build tooling. Many people reach for make and or Bash. That's fine on a Unix, Linux, or arm system, yet those tools don't work well when it comes to windows. PowerShell is cross-platform and would be a good choice, yet it's another language to learn.
+I do find myself with an issue when it comes to build tooling. Many people reach for Make, Bash, or both. That's fine on a Unix, Linux, or ARM system, yet those tools don't work well when it comes to Windows. PowerShell is cross-platform and would be a good choice, yet it's another language to learn.
 
-My background working with the Cake build tool in .net sent me looking for a build tool written in Go. You may be asking why Go? It is a language you are already using to write your code, and it is cross-platform. It solves my two most significant issues.
+My background working with the Cake build tool in .NET sent me looking for a build tool written in Go. You may be asking why Go? It is a language you are already using to write your code, and it is cross-platform. It solves my two most significant issues.
 
 ## Basic Example
 
@@ -36,6 +36,7 @@ func Clean() error {
 
 func Build() error {
 	mg.Deps(Clean)
+	
 	if err := sh.Run("go", "mod", "download"); err != nil {
 		return err
 	}
@@ -44,6 +45,7 @@ func Build() error {
 
 func Download() error {
 	mg.Deps(Build)
+	
 	url := "https://gist.githubusercontent.com/phillipsj/07fed8ce06f932c19ab7613d8426d922/raw/13d3fc0ca54d136ad5744fd4448b65dbc87f32dc/random.txt"
 	err := sh.Run("curl", "-O", url)
 	if err != nil {
@@ -53,7 +55,7 @@ func Download() error {
 }
 ```
 
-There are three defined tasks. One to clean the previous build output, build the project, and then download a needed file. I have defined the build task as the default task and built out the required dependencies between tasks. To make bootstrapping Mage easier, I have also decided to use the [zero install option](https://magefile.org/zeroinstall/). Let's run our first task, which will be the default task.
+There are three defined tasks. One to clean the previous build output, build the project, and then download a needed file. I have defined the build task as the default task and built out the required dependencies between tasks. To make bootstrapping Mage easier, I decided to use the [zero install option](https://magefile.org/zeroinstall/). Let's run our first task, which will be the default task.
 
 ```Bash
 go run mage.go
