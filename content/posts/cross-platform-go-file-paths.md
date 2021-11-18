@@ -5,6 +5,7 @@ tags:
 - Go
 - Golang
 - Cross-Platform
+- Go Windows Dev
 ---
 
 I was fortunate enough to kick this week off with one heck of a bug. I discovered the bug last week, and on Friday, after an excellent debugging session with breakpoints and stepping into each call, I found the cause. That was a good way to head into the weekend, and I knew that I would have to determine a solution this week. The library that I discovered the issue was initially designed to run in the context of a Linux OS and Linux containers. Given that I was adapting this code to work on Windows shouldn't have come as a surprise that I would run into an issue of some sort. This issue was pretty cool, so I thought I would share and write it up. I will do my best to describe the problem.
