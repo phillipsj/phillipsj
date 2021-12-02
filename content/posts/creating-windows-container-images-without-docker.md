@@ -38,29 +38,25 @@ We have a project published to the `app` directory that we can bundle for adding
 
 ## Creating the bundle
 
-The bundle required for the append command is a tar file. On Linux, that could be a tar of the output of the publish command. However, on Windows, the layers are required to have a specific structure. Windows Layers are required to have a Files and a Hives directory. Inside of the Files directory is where you would place your published output. Then those directories need to be bundled together in a tar file. Let's do that.
+The bundle required for the append command is a tar file. On Linux, that could be a tar of the output of the publish command. However, on Windows, the layers are required to have a specific structure. Windows Layers are required to have a Files and a Hives directory. Inside of the Files directory is where you would place your published output. Then those directories need to be bundled together in a tar file. Fortunately, the lastest crane handles that complexity for us so we can just tar up our app directory.
 
 ```Bash
-# creating the structure
-mkdir layer layer/Files layer/Hives
-# copying the app into the structure
-cp -r ./app ./layer/Files/
 # creating the tar file
-cd layer && tar -cf layer.tar Files/ Hives/
+tar -cf layer.tar app/
 ```
 
-We should have a *layer.tar* file in our layer directory that we can use when we run the crane command to create our image.
+We should have a *layer.tar* file in our that we can use when we run the crane command to create our image.
 
 ## Appending
 
-The Crane append command, by default, wants to push to a registry. I am using Docker Hub, so log into your registry first before executing the append command. Let's run the append making sure to set our base image, `mcr.microsoft.com/dotnet/aspnet:5.0-nanoserver-ltsc2022`.
+The Crane append command, by default, wants to push to a registry. I am using Docker Hub, so log into your registry first before executing the append command. Let's run the append making sure to set our base image, `mcr.microsoft.com/dotnet/aspnet:6.0-nanoserver-ltsc2019`.
 
 ```Bash
 crane append /
 --platform=windows/amd64 /
 -f layer.tar /
 -t phillipsj/craneapp:0.1.0 /
--b mcr.microsoft.com/dotnet/aspnet:6.0-nanoserver-ltsc2022
+-b mcr.microsoft.com/dotnet/aspnet:6.0-nanoserver-ltsc2019
 ```
 
 Once that finishes, we should have an image in Docker Hub. However, we are missing our entry point; fortunately, crane doesn't currently support mutating the entry point for Windows images. That means we will have to pass an entry point when executing the command which Kubernetes and Docker support.
