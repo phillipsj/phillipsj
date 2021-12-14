@@ -89,6 +89,10 @@ name = "Tags"
 url = "/tags/"
 weight = -180
 
+[[menu.main]]
+name = "Sessionize"
+url = "https://sessionize.com/phillipsj/"
+weight = -190
 
 [blackfriday]
 hrefTargetBlank = true
