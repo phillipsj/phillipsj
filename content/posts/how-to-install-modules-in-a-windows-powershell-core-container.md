@@ -57,7 +57,7 @@ SHELL ["pwsh", "-Command"]
 
 USER ContainerAdministrator
 
-RUN Install-Module -Name Polaris -Force  
+RUN Install-Module -Name Polaris -Scope AllUsers -Force  
 
 USER ContainerUser
 
