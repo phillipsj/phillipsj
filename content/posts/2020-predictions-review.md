@@ -35,7 +35,7 @@ This one I am really upset about making. I said that Mozilla would start splitti
 
 ## Final Tally 
 
-My total score was three points. I am already working on my next set of predictions, and I will get those posted soon.s
+My total score was three points. I am already working on my next set of predictions, and I will get those posted soon.
 
 Thanks for reading,
 
