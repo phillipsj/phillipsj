@@ -11,11 +11,11 @@ I posted a tweet on Twitter asking what people would like to know about DevOps a
 
 The first question asked was the following:
 
-{{< tweet 1322197407896162304 >}}
+{{< tweet user="Brad_Knowles" id="1322197407896162304" >}}
 
 With a follow up providing more detail:
 
-{{< tweet 1322197536774434819 >}}
+{{< tweet user="Brad_Knowles" id="1322197536774434819" >}}
 
 This is a tough question and one that is difficult to start addressing. DevOps is all about culture, and to be successful, you have to facilitate the cultural shifts necessary to let the changes succeed and drive success.
 
