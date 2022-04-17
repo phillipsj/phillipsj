@@ -55,10 +55,45 @@ Keep the checksum file as you will need to put the checksum value in our Packer 
 
 ### Creating the data store folder
 
-Open of vCenter for your cluster. Navigate to the data store 
+Open of vCenter for your cluster. Navigate to the data store that you want to use and add a folder called `iso`. Inside of `iso` create a folder called `linux`. Finally, inside of the `linux` folder create a folder called `openSUSE`. 
+
+*iso-datastore.png*
 
 ### Creating the content library
 
+Create a content lbriary to save your templates. [Here](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-2A0F1C13-7336-45CE-B211-610D39A6E1F4.html) are the official docs on how to do that.
+
+*content-library.png*
+
 ### Uploading the ISO
 
+Navigate to the openSUSE folder that we created in previous step and click on `Upload Files`. Select the openSUSE ISO that we downloaded and upload it to that location.
 
+## Packer installation and setup
+
+We just have a few more steps left before we can start creating our Packer template. First we need to install Packer. You can download it from [here](https://www.packer.io/downloads) or you can use a package manager.
+
+Windows:
+
+```PowerShell
+choco install packer
+```
+
+openSUSE:
+
+```Bash
+rpm --import https://rpm.releases.hashicorp.com/gpg
+zypper ar https://rpm.releases.hashicorp.com/fedora/35/x86_64/stable hashicorp
+zypper refresh && zypper install terraform
+```
+
+macOS: 
+
+```Bash
+brew tap hashicorp/tap
+brew install hashicorp/tap/packer
+```
+
+Now that we have it Packer installed, we need to make sure that we have a few other tools installed. 
+
+https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/oscdimg-command-line-options
