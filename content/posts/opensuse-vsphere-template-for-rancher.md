@@ -82,9 +82,8 @@ choco install packer
 openSUSE:
 
 ```Bash
-rpm --import https://rpm.releases.hashicorp.com/gpg
-zypper ar https://rpm.releases.hashicorp.com/fedora/35/x86_64/stable hashicorp
-zypper refresh && zypper install terraform
+$ wget https://releases.hashicorp.com/packer/1.8.0/packer_1.8.0_linux_amd64.zip
+$ unzip packer_1.8.0_linux_amd64.zip && mv packer ~/bin
 ```
 
 macOS: 
@@ -94,6 +93,33 @@ brew tap hashicorp/tap
 brew install hashicorp/tap/packer
 ```
 
-Now that we have it Packer installed, we need to make sure that we have a few other tools installed. 
+Now that we have it Packer installed, we need to make sure that we have a few other tools installed. You will need `xorriso` or `mkisofs` on Linux/macOS. On Windows you will need [`oscdimg`](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/oscdimg-command-line-options). These are all used to create ISOs to mount your unattend configuration. In the case of openSUSE that would be an [AutoYaST](https://doc.opensuse.org/projects/autoyast/) file. That wraps up everything we need before we start creating our Packer configuration.
 
-https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/oscdimg-command-line-options
+## Packer Configuration
+
+We are now getting to the section we all want. Let's first create a directory for our project.
+
+```Bash
+mkdir packer-opensuse-template && cd "$_"
+```
+
+Now I am a big fan of how Terraform started laying out projects when 0.12 was introduced. We will follow a similar pattern. Let's create our `versions.pkr.hcl`.
+
+```HCL
+packer {
+  required_version = ">= 1.8.0, < 2.0.0"
+  required_plugins {
+    vsphere = {
+      version = ">= 0.0.1"
+      source = "github.com/hashicorp/vsphere"
+    }
+  }
+}
+```
+
+Now we can run `packer init` to install our plugin and make sure that our `versions.pkr.hcl` is valid.
+
+```Bash
+$ packer init .
+Installed plugin github.com/hashicorp/vsphere v1.0.3 in "/home/phillipsj/.config/packer/plugins/github.com/hashicorp/vsphere/packer-plugin-vsphere_v1.0.3_x5.0_linux_amd64"
+```
