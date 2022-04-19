@@ -123,3 +123,78 @@ Now we can run `packer init` to install our plugin and make sure that our `versi
 $ packer init .
 Installed plugin github.com/hashicorp/vsphere v1.0.3 in "/home/phillipsj/.config/packer/plugins/github.com/hashicorp/vsphere/packer-plugin-vsphere_v1.0.3_x5.0_linux_amd64"
 ```
+
+Great, let's now start create our `source.pkr.hcl` file that defines our vSphere VM that will be used to build.
+
+```HCL
+
+```
+
+You will notice that we have some variables defined that we need to create. Let's create a `variables.pkr.hcl`.
+
+```HCL
+variable "vsphere_endpoint" {
+  type        = string
+  description = "The fully qualified domain name or IP address of the vCenter Server instance. (e.g. 'sfo-w01-vc01.sfo.rainpole.io')"
+}
+
+variable "vsphere_username" {
+  type        = string
+  description = "The username to login to the vCenter Server instance. (e.g. 'svc-packer-vsphere@rainpole.io')"
+  sensitive   = true
+}
+
+variable "vsphere_password" {
+  type        = string
+  description = "The password for the login to the vCenter Server instance."
+  sensitive   = true
+}
+
+variable "vsphere_insecure_connection" {
+  type        = bool
+  description = "Do not validate vCenter Server TLS certificate."
+  default     = true
+}
+
+variable "vsphere_datacenter" {
+  type        = string
+  description = "The name of the target vSphere datacenter. (e.g. 'sfo-w01-dc01')"
+}
+
+variable "vsphere_cluster" {
+  type        = string
+  description = "The name of the target vSphere cluster. (e.g. 'sfo-w01-cl01')"
+}
+
+variable "vsphere_datastore" {
+  type        = string
+  description = "The name of the target vSphere datastore. (e.g. 'sfo-w01-cl01-vsan01')"
+}
+
+variable "vsphere_folder" {
+  type        = string
+  description = "The name of the target vSphere cluster. (e.g. 'sfo-w01-fd-templates')"
+}
+
+variable "build_username" {
+  type        = string
+  description = "The username to login to the guest operating system. (e.g. 'rainpole')"
+  sensitive   = true
+}
+
+variable "build_password" {
+  type        = string
+  description = "The password to login to the guest operating system."
+  sensitive   = true
+}
+```
+
+The last item before we check our work is creating a `locals.pkr.hcl` file.
+
+```HCL
+locals {
+  build_by      = "Built by: HashiCorp Packer ${packer.version}"
+  build_date    = formatdate("YYYY-MM-DD hh:mm ZZZ", timestamp())
+  build_version = formatdate("YY.MM", timestamp())
+}
+```
