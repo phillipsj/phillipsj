@@ -127,7 +127,156 @@ Installed plugin github.com/hashicorp/vsphere v1.0.3 in "/home/phillipsj/.config
 Great, let's now start create our `source.pkr.hcl` file that defines our vSphere VM that will be used to build.
 
 ```HCL
+source "vsphere-iso" "opensuse" {
+  // vCenter Server Endpoint Settings and Credentials
+  vcenter_server      = var.vsphere_endpoint
+  username            = var.vsphere_username
+  password            = var.vsphere_password
+  insecure_connection = var.vsphere_insecure_connection
 
+  // vSphere Settings
+  datacenter = var.vsphere_datacenter
+  cluster    = var.vsphere_cluster
+  datastore  = var.vsphere_datastore
+  folder     = var.vsphere_folder
+
+  // Virtual Machine Settings
+  guest_os_type        = "sles15_64Guest"
+  vm_name              = "linux-opensuse-15.3-v${local.build_version}"
+  firmware             = "efi"
+  CPUs                 = 1
+  cpu_cores            = 2
+  RAM                  = 4096
+  cdrom_type           = "sata"
+  disk_controller_type = ["pvscsi"]
+  storage {
+    disk_size             = 20000
+    disk_thin_provisioned = true
+  }
+  network_adapters {
+    network      = "VM Network"
+    network_card = "vmxnet3"
+  }
+  vm_version           = 19
+  remove_cdrom         = true
+  tools_upgrade_policy = true
+  notes                = "Version: v${local.build_version}\nBuilt on: ${local.build_date}\n${local.build_by}"
+
+  // Removable Media Settings
+  iso_paths    = ["[datastore1] iso/linux/openSUSE/openSUSE-Leap-15.3-3-DVD-x86_64-Build38.1-Media.iso"]
+  iso_checksum = "sha256:c1515358daec1ab7c3be2b7c28636eac2e18f0ad550b918ed0550722b87f8b49"
+  cd_content   = local.data_source_content
+  cd_label     = "cidata"
+
+  // Boot and Provisioning Settings
+  boot_order = "disk,cdrom"
+  boot_wait  = "5s"
+  boot_command = [
+    "<esc><enter><wait>",
+    "linux ",
+    "biosdevname=0 ",
+    "net.ifnames=0 ",
+    "netdevice=eth0 ",
+    "netsetup=dhcp ",
+    "lang=en_US ",
+    "textmode=1 ",
+    "autoyast=device:///autoinst.xml",
+    "<enter><wait>"
+  ]
+  shutdown_command = "echo '${var.build_password}' | sudo -S -E shutdown -P now"
+
+  // Communicator Settings and Credentials
+  communicator = "ssh"
+  ssh_username = var.build_username
+  ssh_password = var.build_password
+  ssh_port     = 22
+  ssh_timeout  = "30m"
+
+  // Template and Content Library Settings
+  convert_to_template = false
+  content_library_destination {
+    library     = "templates"
+    description = "Version: v${local.build_version}\nBuilt on: ${local.build_date}\n${local.build_by}"
+    ovf         = true
+    destroy     = true
+    skip_import = false
+  }
+}
+```
+
+With our source defined we can create our `builder.pkr.hcl` which defines provisioning steps that we need to execute. This will mainly be executed to cleanup our system to prepare it for becoming a template. We also configure cloud-init.
+
+```HCL
+build {
+  sources = ["source.vsphere-iso.opensuse"]
+  // Configure cloud-init for vSphere and Rancher node driver.
+  provisioner "shell" {
+    inline = [
+      "rm -rf /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg",
+      "rm -rf /etc/cloud/cloud.cfg.d/99-installer.cfg",
+      "rm -rf /etc/netplan/00-installer-config.yaml",
+      "echo 'disable_vmware_customization: false' >> /etc/cloud/cloud.cfg",
+      "echo 'datasource_list: [ NoCloud, VMWare, OVF, None ]' > /etc/cloud/cloud.cfg.d/90_dpkg.cfg"
+    ]
+  }
+  //Setting hostname to localhost.
+  provisioner "shell" {
+    inline = [
+      "cat /dev/null > /etc/hostname",
+      "hostnamectl set-hostname localhost"
+    ]
+  }
+  // Cleaning the /tmp directories.
+  provisioner "shell" {
+    inline = [
+      "if [ -f /etc/udev/rules.d/70-persistent-net.rules ]; then",
+      "rm /etc/udev/rules.d/70-persistent-net.rules",
+      "fi"
+    ]
+  }
+  // Disable swap.
+  provisioner "shell" {
+    inline = [
+      "swapoff -a"
+    ]
+  }
+  // Cleaning persistent udev rules.
+  provisioner "shell" {
+    inline = [
+      "rm -rf /tmp/*",
+      "rm -rf /var/tmp/*"
+    ]
+  }
+  // Cleaning the SSH host keys.
+  provisioner "shell" {
+    inline = [
+      "rm -f /etc/ssh/ssh_host_*"
+    ]
+  }
+  // Cleaning the machine-id.
+  provisioner "shell" {
+    inline = [
+      "truncate -s 0 /etc/machine-id",
+      "rm /var/lib/dbus/machine-id",
+      "ln -s /etc/machine-id /var/lib/dbus/machine-id"
+    ]
+  }
+  // Cleaning cloud-init.
+  provisioner "shell" {
+    inline = [
+      "cloud-init clean -s -l"
+    ]
+  }
+  // Cleaning the shell history.
+  provisioner "shell" {
+    inline = [
+      "unset HISTFILE",
+      "history -cw",
+      "echo > ~/.bash_history",
+      "rm -fr /root/.bash_history"
+    ]
+  }
+}
 ```
 
 You will notice that we have some variables defined that we need to create. Let's create a `variables.pkr.hcl`.
@@ -196,5 +345,265 @@ locals {
   build_by      = "Built by: HashiCorp Packer ${packer.version}"
   build_date    = formatdate("YYYY-MM-DD hh:mm ZZZ", timestamp())
   build_version = formatdate("YY.MM", timestamp())
+  data_source_content = {
+    "/autoinst.xml" = templatefile("${abspath(path.root)}/data/autoinst.pkrtpl.hcl", {
+      build_username = var.build_username
+      build_password = var.build_password
+    })
+  }
 }
 ```
+
+We have only two items left to do. The first one is to create our `vars.auto.pkrvars.hcl`. This is where we will set our variables.
+
+```HCL
+vsphere_endpoint            = "vcenter-url"
+vsphere_username            = "administrator@vsphere.local"
+vsphere_password            = "SecretPassword"
+vsphere_insecure_connection = true
+vsphere_datacenter          = "dc1"
+vsphere_cluster             = "cluster1"
+vsphere_datastore           = "datastore1"
+vsphere_folder              = "packer"
+build_username              = "packer"
+build_password              = "P@ckerI5C001"
+```
+
+The last item is the `autoyast` template. Create a directory named `data` and add a file named `autoinst.pkrtpl.hcl`. Place the following in that file.
+
+```HCL
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <scripts>
+    <chroot-scripts config:type="list">
+      <script>
+        <chrooted config:type="boolean">true</chrooted>
+        <filename>add_${build_username}_sudo_rule.sh</filename>
+        <interpreter>shell</interpreter>
+        <source>
+<![CDATA[
+#!/bin/sh
+echo "Defaults:${build_username} !targetpw
+${build_username} ALL=(ALL,ALL) NOPASSWD: ALL" > /etc/sudoers.d/${build_username}
+]]>
+          </source>
+      </script>
+    </chroot-scripts>
+  </scripts>
+  <general>
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+      <forceboot config:type="boolean">true</forceboot>
+      <final_reboot config:type="boolean">false</final_reboot>
+    </mode>
+  </general>
+  <report>
+    <messages>
+      <show config:type="boolean">false</show>
+      <timeout config:type="integer">10</timeout>
+      <log config:type="boolean">true</log>
+    </messages>
+    <warnings>
+      <show config:type="boolean">false</show>
+      <timeout config:type="integer">10</timeout>
+      <log config:type="boolean">true</log>
+    </warnings>
+    <errors>
+      <show config:type="boolean">false</show>
+      <timeout config:type="integer">10</timeout>
+      <log config:type="boolean">true</log>
+    </errors>
+  </report>
+  <keyboard>
+    <keymap>english-us</keymap>
+  </keyboard>
+  <language>
+    <language>en_US</language>
+    <languages>en_US</languages>
+  </language>
+  <timezone>
+    <hwclock>UTC</hwclock>
+    <timezone>Etc/UTC</timezone>
+  </timezone>
+  <partitioning config:type="list">
+    <drive>
+      <enable_snapshots config:type="boolean">false</enable_snapshots>
+      <initialize config:type="boolean">true</initialize>
+      <partitions config:type="list">
+        <partition>
+          <create config:type="boolean">true</create>
+          <crypt_fs config:type="boolean">false</crypt_fs>
+          <filesystem config:type="symbol">ext4</filesystem>
+          <format config:type="boolean">true</format>
+          <loop_fs config:type="boolean">false</loop_fs>
+          <mount>/</mount>
+          <mountby config:type="symbol">device</mountby>
+          <partition_id config:type="integer">131</partition_id>
+          <partition_nr config:type="integer">2</partition_nr>
+          <raid_options />
+          <resize config:type="boolean">false</resize>
+          <size>max</size>
+          <subvolumes config:type="list">
+            <listentry>boot/grub2/i386-pc</listentry>
+            <listentry>boot/grub2/x86_64-efi</listentry>
+            <listentry>home</listentry>
+            <listentry>opt</listentry>
+            <listentry>srv</listentry>
+            <listentry>tmp</listentry>
+            <listentry>usr/local</listentry>
+            <listentry>var/crash</listentry>
+            <listentry>var/log</listentry>
+            <listentry>var/opt</listentry>
+            <listentry>var/spool</listentry>
+            <listentry>var/tmp</listentry>
+          </subvolumes>
+        </partition>
+      </partitions>
+      <pesize />
+      <type config:type="symbol">CT_DISK</type>
+      <use>all</use>
+    </drive>
+  </partitioning>
+  <bootloader>
+    <loader_type>grub2</loader_type>
+		<global>
+			<activate>true</activate>
+			<timeout config:type="integer">1</timeout>
+			<boot_mbr>true</boot_mbr>
+		</global>
+  </bootloader>
+  <networking>
+    <ipv6 config:type="boolean">false</ipv6>
+    <keep_install_network config:type="boolean">true</keep_install_network>
+    <dns>
+      <dhcp_hostname config:type="boolean">true</dhcp_hostname>
+      <resolv_conf_policy>auto</resolv_conf_policy>
+      <hostname>opensuse-leap-x64</hostname>
+    </dns>
+    <interfaces config:type="list">
+      <interface>
+        <bootproto>dhcp</bootproto>
+        <name>eth0</name>
+        <startmode>auto</startmode>
+        <usercontrol>no</usercontrol>
+      </interface>
+    </interfaces>
+  </networking>
+  <firewall>
+    <enable_firewall config:type="boolean">false</enable_firewall>
+    <start_firewall config:type="boolean">false</start_firewall>
+  </firewall>
+  <software>
+    <packages config:type="list">
+      <package>apparmor-parser</package>
+      <package>grub2</package>
+      <package>glibc-locale</package>
+      <package>iputils</package>
+      <package>kernel-default</package>
+      <package>sudo</package>
+      <package>yast2</package>
+      <package>yast2-firstboot</package>
+      <package>zypper</package>
+      <package>yast2-trans-en_US</package>
+      <package>wget</package>
+      <package>curl</package>
+      <package>grub2-branding-openSUSE</package>
+      <package>less</package>
+      <package>net-tools</package>
+      <package>growpart</package>
+      <package>open-vm-tools</package>
+      <package>open-iscsi</package>
+      <package>insserv-compat</package>
+      <package>cloud-init</package>
+    </packages>
+    <patterns config:type="list">
+      <pattern>sw_management</pattern>
+      <pattern>yast2_install_wf</pattern>
+      <pattern>minimal_base</pattern>
+      <pattern>devel_basis</pattern>
+    </patterns>
+    <remove-packages config:type="list">
+      <package>telnet</package>
+      <package>virtualbox-guest-kmp-default</package>
+      <package>virtualbox-guest-tools</package>
+      <package>snapper</package>
+      <package>snapper-zypp-plugin</package>
+    </remove-packages>
+  </software>
+  <services-manager>
+    <default_target>multi-user</default_target>
+    <services>
+      <disable config:type="list" />
+      <enable config:type="list">
+        <service>sshd</service>
+        <service>cloud-init</service>
+        <service>cloud-config</service>
+        <service>cloud-final</service>
+      </enable>
+    </services>
+  </services-manager>
+  <groups config:type="list">
+    <group>
+      <gid>100</gid>
+      <groupname>users</groupname>
+      <userlist />
+    </group>
+  </groups>
+  <user_defaults>
+    <expire />
+    <group>100</group>
+    <groups />
+    <home>/home</home>
+    <inactive>-1</inactive>
+    <no_groups config:type="boolean">true</no_groups>
+    <shell>/bin/bash</shell>
+    <skel>/etc/skel</skel>
+    <umask>022</umask>
+  </user_defaults>
+  <users config:type="list">
+    <user>
+      <user_password>${build_password}</user_password>
+      <username>root</username>
+    </user>
+    <user>
+      <fullname>Built by Packer</fullname>
+      <gid>100</gid>
+      <home>/home/${build_username}</home>
+      <password_settings>
+        <expire />
+        <flag />
+        <inact>-1</inact>
+        <max>99999</max>
+        <min>0</min>
+        <warn>7</warn>
+      </password_settings>
+      <shell>/bin/bash</shell>
+      <uid>1000</uid>
+      <user_password>${build_password}</user_password>
+      <username>${build_username}</username>
+    </user>
+  </users>
+  <kdump>
+    <add_crash_kernel config:type="boolean">false</add_crash_kernel>
+  </kdump>
+</profile>
+```
+
+Now we can run `packer fmt` to make sure that we have everything formatted correctly.
+
+```Bash
+$ packer fmt .
+```
+Once that comes back clean, we need to run `packer validate` to ensure that we don't have any other issues.
+
+```Bash
+$ packer validate -syntax-only .
+Syntax-only check passed. Everything looks okay.
+```
+
+If the validate comes back clean, then everything is ready to actually execute. If it doesn't, then go back through and address the isssues that are listed.
+
+## Building our Image
+
+We made it! We are ready to actually build our image.
