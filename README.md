@@ -6,8 +6,6 @@ My name is Jamie Phillips and I try to be involved in the community through crea
 
 - Contributing on: <a href="https://github.com/phillipsj"><img src="https://img.shields.io/github/followers/phillipsj.svg?label=GitHub&style=social" alt="GitHub"></a>
 
-- Being social on: <a href="https://twitter.com/phillipsj73"><img src="https://img.shields.io/twitter/follow/phillipsj73?label=Twitter&style=social" alt="Twitter"></a> 
-
 - Creating content on: <a href="https://www.phillipsj.net/">Blog</a> or <a href="https://www.youtube.com/channel/UCKGt52ca8BvLTgDP5KIKzCA">YouTube</a>
 
 ## Sponsor me:
