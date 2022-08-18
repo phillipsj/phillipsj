@@ -19,3 +19,6 @@ config.wyam.packages.xml
 # Hugo
 /public
 .hugo_build.lock
+
+# gitpod
+core.*
