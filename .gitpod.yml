@@ -1,0 +1,6 @@
+image: klakegg/hugo:0.101.0-ext-alpine
+tasks:
+  - init: |
+      echo 'TODO: build project'
+    command: |
+      echo 'TODO: start app'
