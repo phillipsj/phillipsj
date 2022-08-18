@@ -8,8 +8,7 @@
   HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.101.0
-  "
+  HUGO_VERSION = "0.101.0"
 
 [[headers]]
   for = "rss.*"
