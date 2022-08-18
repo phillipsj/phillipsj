@@ -1,3 +1,4 @@
+image: klakegg/hugo:0.101.0-ext-alpine
 tasks:
   - name: Start Hugo
     init: echo "Your version of Hugo is `hugo version`"
