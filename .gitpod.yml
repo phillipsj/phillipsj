@@ -1,6 +1,8 @@
-image: klakegg/hugo:0.101.0-ext-alpine
 tasks:
-  - init: |
-      echo 'TODO: build project'
-    command: |
-      echo 'TODO: start app'
+  - name: Start Hugo
+    init: echo "Your version of Hugo is `hugo version`"
+    command: hugo server -D -F --baseUrl $(gp url 1313) --liveReloadPort=443 --appendPort=false --bind=0.0.0.0
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 1313
+    onOpen: open-preview
