@@ -6,7 +6,7 @@ weight: -210
 
 Hello, my name is Jamie Phillips.
 
-I am a Software Engineer, and I work remotely from East Tennessee. I have been programming professionally since 2007 after discovering software development in graduate school. My Geology degree has given me an appreciation for large systems and processes which has created keen interest in Solutions Architecture, DevOps, and the Cloud. During the day I work on Windows, but at night I am all about Linux.
+I am a Staff Site Reliability Engineer, and I work remotely from East Tennessee. I have been programming professionally since 2007 after discovering software development in graduate school. My Geology degree has given me an appreciation for large systems and processes which has created keen interest in Solutions Architecture, DevOps, and the Cloud. During the day I work on Windows, but at night I am all about Linux.
 
 I have profiles scattered around the web at the following sites:
 
