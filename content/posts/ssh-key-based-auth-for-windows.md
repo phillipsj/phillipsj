@@ -205,7 +205,7 @@ output "ssh_command" {
 
 # Wrapping Up
 
-This was a fun one to work on. I have been using SSH with Windows for some time, yet I hadn't tried to configure key-based authentication. I know have this post to reference in the future. I hope you too find this useful.
+This was a fun one to work on. I have been using SSH with Windows for some time, yet I hadn't tried to configure key-based authentication. I now have this post to reference in the future. I hope you too find this useful.
 
 Thanks for reading,
 
