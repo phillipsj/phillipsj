@@ -5,7 +5,7 @@ copyright = ""
 
 theme = "minimo"
 
-Paginate = 10
+pagination.pagerSize = 10
 preserveTaxonomyNames = true
 
 enableRobotsTXT = true # generate robots.txt
