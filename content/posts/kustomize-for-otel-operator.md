@@ -11,7 +11,7 @@ tags:
 - Helm
 ---
 
-If you have been reading my blog for a while, you may already know that I'm not the biggest fan of [Helm](https://helm.sh). If you’re new here, hi, I'm not of an of Helm. I feel it adds a lot of complexities that
+If you have been reading my blog for a while, you may already know that I'm not the biggest fan of [Helm](https://helm.sh). If you’re new here, hi, I'm not a fan of Helm. I feel it adds a lot of complexities that
 are seldom worth it, and it's hard to build a Helm chart well, note I said well. Many projects have started publishing manifests for their projects, and the [OpenTelemetry Operator](https://github.com/open-telemetry/opentelemetry-operator) is one of them. You can find the manifest [here](https://github.com/open-telemetry/opentelemetry-operator/releases/latest/download/opentelemetry-operator.yaml). There is also an artifact for the manifest also available.
 
 The OpenTelemetry operator has several areas that could be tweaked when doing a deployment. I typically tweak the collector image, the Java agent image, and a couple of settings related to requirements for different cloud vendors. I believe the project is going to change the default collector image to the K8s collector image, which will remove that need. The default Java agent image is the older 1.x where I want the 2.x version. This got me thinking that I should just create some patches to the manifest to apply those tweaks. I thought I would blog about the creation of these patches and then share them to hopefully make it easier for others to take the same approach. Let's get started.
