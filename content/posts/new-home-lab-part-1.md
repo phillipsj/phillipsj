@@ -1,5 +1,5 @@
 ---
-title: "New Home Lab: Part 1"
+title: "New Home Lab Part 1"
 date: 2025-01-13T19:29:48-05:00
 tags:
 - Home Lab
