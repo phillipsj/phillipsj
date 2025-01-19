@@ -22,3 +22,5 @@ config.wyam.packages.xml
 
 # gitpod
 core.*
+
+**/.DS_Store
