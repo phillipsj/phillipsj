@@ -10,7 +10,7 @@ tags:
 - Kubernetes
 ---
 
-My last post I had an outline of the steps I wanted to take. I completed all the hardware configuration and setup of Ubuntu. This leaves just getting [MicroK8s]() installed and configured. I said that I was going to have automation of my cluster, and that is exactly how I set it up. I took a deep dive into [launch configurations](https://microk8s.io/docs/explain-launch-config) which I successfully used to create my MicroK8s cluster. The only tricky part was figuring out how to pass arguments to addons like MetalLB, and it wasn't that challenging. Here is how I set it up.
+My last post I had an outline of the steps I wanted to take. I completed all the hardware configuration and setup of Ubuntu. This leaves just getting [MicroK8s](https://microk8s.io) installed and configured. I said that I was going to have automation of my cluster, and that is exactly how I set it up. I took a deep dive into [launch configurations](https://microk8s.io/docs/explain-launch-config) which I successfully used to create my MicroK8s cluster. The only tricky part was figuring out how to pass arguments to addons like MetalLB, and it wasn't that challenging. Here is how I set it up.
 
 First step was to create a launch configuration with the various addons that I wanted. I started with the standard launch configuration and just added the addons.
 
@@ -67,7 +67,7 @@ metallb-system       controller-7ffc454778-v4r68                  1/1     Runnin
 metallb-system       speaker-g86j5                                1/1     Running   0          25s
 ```
 
-There is a tutorial that covers most of this on the MicroK8s website called [How to use launch configurations](https://microk8s.io/docs/add-launch-config). I have also published my launch configuration to a repo called [my-home-lab-config](https://github.com/phillipsj/my-home-lab-config) on GitHub. I will be posting more to that repo as I add more to my cluster. I will also use it to store configuration for any tools that I install.   
+There is a tutorial that covers most of this on the MicroK8s website called [How to use launch configurations](https://microk8s.io/docs/add-launch-config). I have also published my launch configuration to a repo called [my-home-lab-config](https://github.com/phillipsj/my-home-lab-config) on GitHub. I will be posting more to that repo as I add more to my cluster. I will also use it to store configuration for any tools that I install.
 
 If you're curious as to how the single resource usage on the host is going, here is a screenshot from [btop](https://github.com/aristocratos/btop).
 
@@ -78,5 +78,3 @@ Not too bad running all of these services. Let's see what impact my plans have i
 Thanks for reading,
 
 Jamie
-
-
