@@ -1,5 +1,5 @@
-{{- $defaultMermaid := .Site.Data.config.default.mermaid -}}
-{{- $mermaid := ( or .Site.Data.config.mermaid $defaultMermaid ) -}}
+{{- $defaultMermaid := hugo.Data.config.default.mermaid -}}
+{{- $mermaid := ( or hugo.Data.config.mermaid $defaultMermaid ) -}}
 
 {{- if eq .Params.mermaid true -}}
 

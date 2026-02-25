@@ -1,0 +1,8 @@
+<script
+  src="https://gist.github.com/{{ .Get 0 }}/{{ .Get 1 }}.js{{ with .Get 2 }}?file={{ . | urlquery }}{{ end }}">
+</script>
+<noscript>
+  <p>
+    <a href="https://gist.github.com/{{ .Get 0 }}/{{ .Get 1 }}">View this gist on GitHub</a>
+  </p>
+</noscript>

@@ -5,7 +5,7 @@
 {{- end -}}
 
 {{- range $authorID := .Params.authors -}}
-  {{- $author := ( index $.Site.Data.authors $authorID ) -}}
+  {{- $author := ( index hugo.Data.authors $authorID ) -}}
   {{- with $author.social.twitter -}}
     <meta name='twitter:creator' content='@{{- . -}}'>
   {{- end -}}

@@ -27,7 +27,7 @@
   {{- end -}}
 
   {{- $scriptKey := ( print . "_search" ) -}}
-  {{- $scriptName := ( index $.Site.Data.assets $scriptKey ).js -}}
+  {{- $scriptName := ( index hugo.Data.assets $scriptKey ).js -}}
   <script src='{{ print "assets/js/" $scriptName | relURL }}'></script>
 {{- end -}}
 

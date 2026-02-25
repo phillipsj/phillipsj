@@ -1,5 +1,5 @@
-{{- $defaultConfig := .Site.Data.config.default.widgets.sidebar_menu -}}
-{{- $configData := ( or .Site.Data.config.widgets.sidebar_menu $defaultConfig ) -}}
+{{- $defaultConfig := hugo.Data.config.default.widgets.sidebar_menu -}}
+{{- $configData := ( or hugo.Data.config.widgets.sidebar_menu $defaultConfig ) -}}
 {{- $lang := .Site.Language.Lang -}}
 {{- $config := ( ( index $configData $lang ) | default $configData ) -}}
 

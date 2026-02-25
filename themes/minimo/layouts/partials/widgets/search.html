@@ -1,5 +1,5 @@
-{{- $defaultConfig := .Site.Data.config.default.widgets.search -}}
-{{- $configData := ( or .Site.Data.config.widgets.search $defaultConfig ) -}}
+{{- $defaultConfig := hugo.Data.config.default.widgets.search -}}
+{{- $configData := ( or hugo.Data.config.widgets.search $defaultConfig ) -}}
 {{- $lang := .Site.Language.Lang -}}
 {{- $config := ( ( index $configData $lang ) | default $configData ) -}}
 
