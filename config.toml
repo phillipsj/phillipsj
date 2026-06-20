@@ -1,6 +1,6 @@
 baseURL = "https://phillipsj.net"
 title = "Jamie Phillips"
-languageCode = "en-us"
+locale = "en-us"
 copyright = ""
 
 theme = "minimo"
@@ -99,7 +99,7 @@ hrefTargetBlank = true
 [languages]
   # edit this block for your own language
   [languages.en]
-    languageName = "English"
+    label = "English"
     weight = 1
     [languages.en.params]
     lang = "en"

@@ -1,5 +1,5 @@
-{{- $defaultConfig := .Site.Data.config.default.widgets.taxonomy_cloud -}}
-{{- $configData := ( or .Site.Data.config.widgets.taxonomy_cloud $defaultConfig ) -}}
+{{- $defaultConfig := hugo.Data.config.default.widgets.taxonomy_cloud -}}
+{{- $configData := ( or hugo.Data.config.widgets.taxonomy_cloud $defaultConfig ) -}}
 {{- $lang := .Site.Language.Lang -}}
 {{- $config := ( ( index $configData $lang ) | default $configData ) -}}
 

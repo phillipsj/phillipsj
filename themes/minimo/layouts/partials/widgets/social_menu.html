@@ -2,8 +2,8 @@
 
 {{- if $social -}}
 
-{{- $defaultConfig := .Site.Data.config.default.widgets.social_menu -}}
-{{- $configData := ( or .Site.Data.config.widgets.social_menu $defaultConfig ) -}}
+{{- $defaultConfig := hugo.Data.config.default.widgets.social_menu -}}
+{{- $configData := ( or hugo.Data.config.widgets.social_menu $defaultConfig ) -}}
 {{- $lang := .Site.Language.Lang -}}
 {{- $config := ( ( index $configData $lang ) | default $configData ) -}}
 
@@ -21,7 +21,7 @@
     {{- range $platform := $config.platforms -}}
       {{- with $username := ( index $social $platform ) -}}
       <li>
-        <a href='{{ print ( index $.Site.Data.theme.social.base $platform ) $username }}' target='_blank' rel='noopener me'>
+        <a href='{{ print ( index hugo.Data.theme.social.base $platform ) $username }}' target='_blank' rel='noopener me'>
           <span class='screen-reader-text'>
             {{- if eq $platform "email" -}}
               {{- i18n "contactViaEmail" -}}

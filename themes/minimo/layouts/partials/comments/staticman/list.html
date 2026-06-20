@@ -1,8 +1,8 @@
 {{- $entryId := .File.UniqueID -}}
 
-{{- if isset .Site.Data.comments $entryId -}}
+{{- if isset hugo.Data.comments $entryId -}}
 
-{{- $comments := ( index .Site.Data.comments $entryId ) -}}
+{{- $comments := ( index hugo.Data.comments $entryId ) -}}
 <h3 class='comments-title'>
   {{ i18n "commentsOnEntry" ( dict "Count" ( len $comments ) "Title" .Title ) }}
 </h3>

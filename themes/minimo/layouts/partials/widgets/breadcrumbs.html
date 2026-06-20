@@ -1,5 +1,5 @@
-{{- $defaultConfig := .Site.Data.config.default.widgets.breadcrumbs -}}
-{{- $configData := ( or .Site.Data.config.widgets.breadcrumbs $defaultConfig ) -}}
+{{- $defaultConfig := hugo.Data.config.default.widgets.breadcrumbs -}}
+{{- $configData := ( or hugo.Data.config.widgets.breadcrumbs $defaultConfig ) -}}
 {{- $lang := .Site.Language.Lang -}}
 {{- $config := ( ( index $configData $lang ) | default $configData ) -}}
 

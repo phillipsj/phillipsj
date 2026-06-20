@@ -9,7 +9,7 @@ tags:
 
 I am back with another excellent set of questions on Twitter concerning team knowledge and security.
 
-{{< tweet user="sinclairinat0r" id="1322988042454503424" >}}
+{{< x user="sinclairinat0r" id="1322988042454503424" >}}
 
 I have touched on these in a previous, just a little indirectly, and I will cover them more in-depth here.
 

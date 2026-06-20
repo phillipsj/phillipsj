@@ -34,7 +34,7 @@
 
 {{- if not ( or .Params.images .Params.cover ) -}}
   {{- range $authorID := .Params.authors -}}
-    {{- $author := ( index $.Site.Data.authors $authorID ) -}}
+  {{- $author := ( index hugo.Data.authors $authorID ) -}}
     {{- with $author -}}
       {{- if or .social.email ( and .email.username .email.host ) -}}
       <meta property='og:image' content='https://www.gravatar.com/avatar/
@@ -65,7 +65,7 @@
 
 {{- if .IsPage -}}
   {{- range $authorID := .Params.authors -}}
-    {{- $author := ( index $.Site.Data.authors $authorID ) -}}
+    {{- $author := ( index hugo.Data.authors $authorID ) -}}
     {{- with $author.social.facebook -}}
       <meta property='article:author' content='https://facebook.com/{{ . }}'>
     {{- end -}}

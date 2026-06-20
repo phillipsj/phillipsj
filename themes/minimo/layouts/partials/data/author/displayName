@@ -9,7 +9,7 @@
 {{- end -}}
 
 {{- $lang := ( .Params.lang | default .Lang ) -}}
-{{- $author := ( index $.Site.Data.authors ( $.Scratch.Get "authorID" ) ) -}}
+{{- $author := ( index hugo.Data.authors ( $.Scratch.Get "authorID" ) ) -}}
 {{- $i18nAuthor := ( index $author $lang ) -}}
 {{- $name := ( or $i18nAuthor.name $author.name ) -}}
 {{- $name.display -}}
