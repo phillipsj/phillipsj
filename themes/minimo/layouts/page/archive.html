@@ -9,12 +9,24 @@
 {{ end }}
 
 <div class='container list-container'>
-  {{ range ( where .Site.RegularPages "Type" "ne" "page" ).GroupByDate "2006" }}
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ range $posts.GroupByDate "2006" }}
   <div class='archive-group sep-after'>
     <h3>{{ .Key }}</h3>
     <ul class='list'>
-      {{ range  .Pages }}
-        {{ .Render "li.archive" }}
+      {{ range .Pages }}
+      <li class='item'>
+        <div class='meta'>
+          {{ partial "list/date.archive" . }}
+        </div>
+        <header class='item-header'>
+          <h4 class='item-title'>
+            <a href='{{ .Permalink | relURL }}'>
+              {{- .Title -}}
+            </a>
+          </h4>
+        </header>
+      </li>
       {{ end }}
     </ul>
   </div>
